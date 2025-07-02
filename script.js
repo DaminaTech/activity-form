@@ -769,6 +769,10 @@ function initForm() {
         checksContainer.innerHTML = ''; // Reset checks
         generalChecksSection.style.display = 'none';
         
+        if (!contractId || !inspectionTypeId) {
+            return;
+        }
+        
         if (contractId === 'caseta') {
             // Handle caseta contract with building-specific inspections
             const contract = data.contracts[contractId];
@@ -784,18 +788,19 @@ function initForm() {
 
             // Add checkboxes for each check in the inspection with frequencies
             inspection.checks.forEach((check, index) => {
+                const checkObj = typeof check === 'string' ? { name: check, frequency: 'lunar' } : check;
                 const checkId = `check_${inspectionTypeId}_${index}`;
                 checksContainer.innerHTML += `
                     <div class="form-check mb-2">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <input class="form-check-input" type="checkbox" name="verificari" 
-                                       id="${checkId}" value="${check.name.replace(/"/g, '&quot;')}">
+                                       id="${checkId}" value="${checkObj.name.replace(/"/g, '&quot;')}">
                                 <label class="form-check-label" for="${checkId}">
-                                    ${check.name}
+                                    ${checkObj.name}
                                 </label>
                             </div>
-                            <span class="badge bg-secondary">${check.frequency}</span>
+                            <span class="badge bg-secondary">${checkObj.frequency}</span>
                         </div>
                     </div>`;
             });
@@ -846,26 +851,77 @@ function initForm() {
     });
 
     // --- Photo Upload Logic ---
-    const handleFiles = (files) => {
-        photoPreview.innerHTML = ''; // Clear existing previews
-        Array.from(files).forEach(file => {
+    function handleFiles(files) {
+        // Only keep the first 6 files if more are selected
+        const filesToProcess = Array.from(files).slice(0, 6);
+        
+        // Clear existing previews if we're replacing them
+        if (filesToProcess.length > 0) {
+            photoPreview.innerHTML = '';
+        }
+        
+        filesToProcess.forEach((file, index) => {
             const reader = new FileReader();
             reader.onload = (e) => {
+                const container = document.createElement('div');
+                container.className = 'preview-image-container';
+                
                 const img = document.createElement('img');
                 img.src = e.target.result;
-                photoPreview.appendChild(img);
+                img.className = 'preview-image';
+                img.alt = `Preview ${index + 1}`;
+                
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-image';
+                removeBtn.innerHTML = '×';
+                removeBtn.title = 'Remove image';
+                removeBtn.onclick = (e) => {
+                    e.stopPropagation();
+                    container.remove();
+                };
+                
+                const fileInfo = document.createElement('div');
+                fileInfo.className = 'file-info';
+                fileInfo.textContent = `${file.name} (${formatFileSize(file.size)})`;
+                
+                container.appendChild(img);
+                container.appendChild(removeBtn);
+                container.appendChild(fileInfo);
+                photoPreview.appendChild(container);
             };
             reader.readAsDataURL(file);
         });
-    };
+    }
 
-    photoDropZone.addEventListener('dragover', (e) => e.preventDefault());
+    // Helper function to format file size
+    function formatFileSize(bytes) {
+        if (bytes === 0) return '0 Bytes';
+        const k = 1024;
+        const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    // Set up drag and drop
+    photoDropZone.addEventListener('dragleave', () => {
+        photoDropZone.classList.remove('drag-over');
+    });
+
     photoDropZone.addEventListener('drop', (e) => {
         e.preventDefault();
-        photoUpload.files = e.dataTransfer.files;
-        handleFiles(photoUpload.files);
+        photoDropZone.classList.remove('drag-over');
+        if (e.dataTransfer.files.length > 0) {
+            photoUpload.files = e.dataTransfer.files;
+            handleFiles(photoUpload.files);
+        }
     });
-    photoUpload.addEventListener('change', () => handleFiles(photoUpload.files));
+
+    // Handle file input change
+    photoUpload.addEventListener('change', () => {
+        if (photoUpload.files.length > 0) {
+            handleFiles(photoUpload.files);
+        }
+    });
 
     // --- Form Submission ---
     form.addEventListener('submit', async (e) => {
