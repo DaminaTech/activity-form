@@ -20,7 +20,9 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="activityDate" class="form-label required">Data Activității</label>
-                            <input type="date" class="form-control" id="activityDate" name="dataActivitate" required>
+                            <div class="date-input-container">
+                                <input type="date" class="form-control" id="activityDate" name="dataActivitate" required>
+                            </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="teamMembers" class="form-label">Echipa Implicată</label>
@@ -161,6 +163,70 @@
         </div>
     </div>
 
+    <script>
+        // Add click handler for the date picker
+        document.addEventListener('DOMContentLoaded', function() {
+            const dateInput = document.getElementById('activityDate');
+            const dateContainer = document.querySelector('.date-input-container');
+            
+            // Set today's date as default
+            const today = new Date();
+            const formattedDate = today.toISOString().substring(0, 10);
+            dateInput.value = formattedDate;
+            
+            // Hide the native date input but keep it functional
+            dateInput.style.opacity = '0';
+            dateInput.style.position = 'absolute';
+            dateInput.style.pointerEvents = 'none';
+            
+            // Create a visible date display
+            const dateDisplay = document.createElement('div');
+            dateDisplay.className = 'date-display';
+            dateDisplay.textContent = formatDate(dateInput.value);
+            dateContainer.appendChild(dateDisplay);
+            
+            // Format date to display
+            function formatDate(dateString) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                return new Date(dateString).toLocaleDateString('ro-RO', options);
+            }
+            
+            // Update display when date changes
+            dateInput.addEventListener('change', function() {
+                dateDisplay.textContent = formatDate(this.value);
+            });
+            
+            // Handle click on the container
+            dateContainer.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (dateInput.showPicker) {
+                    dateInput.showPicker();
+                } else {
+                    dateInput.focus();
+                }
+                // Focus the input for better mobile support
+                dateInput.focus();
+            });
+            
+            // Also handle label click
+            const dateLabel = document.querySelector('label[for="activityDate"]');
+            if (dateLabel) {
+                dateLabel.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    if (dateInput.showPicker) {
+                        dateInput.showPicker();
+                    }
+                    dateInput.focus();
+                });
+                dateLabel.style.cursor = 'pointer';
+            }
+            
+            // Prevent keyboard input
+            dateInput.addEventListener('keydown', function(e) {
+                e.preventDefault();
+            });
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
