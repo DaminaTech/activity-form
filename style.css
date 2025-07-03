@@ -253,6 +253,45 @@ body {
     transform: none;
 }
 
+/* File Upload Button Styles */
+#fileUploadButton {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#fileUploadButton.highlight {
+    background-color: #0b5ed7;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#fileUploadButton svg {
+    transition: transform 0.2s ease;
+}
+
+#fileUploadButton:hover svg {
+    transform: translateY(-2px);
+}
+
+/* Hide the default file input */
+#photoUpload {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* File count text */
+#file-count {
+    min-height: 1.5em;
+}
+
 .hidden-section {
     display: none;
 }
