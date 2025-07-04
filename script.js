@@ -638,7 +638,6 @@ function initForm() {
     const technicalSolution = document.getElementById('technicalSolution');
     const problemMaterials = document.getElementById('problemMaterials');
     const workCompletedRadios = document.querySelectorAll('input[name="lucrareFinalizata"]');
-    const photoDropZone = document.getElementById('photo-drop-zone');
     const photoUpload = document.getElementById('photoUpload');
     const photoPreview = document.getElementById('photo-preview');
     const submitButton = document.getElementById('submitBtn');
@@ -902,24 +901,43 @@ function initForm() {
         return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
     }
 
-    // Set up drag and drop
-    photoDropZone.addEventListener('dragleave', () => {
-        photoDropZone.classList.remove('drag-over');
-    });
-
-    photoDropZone.addEventListener('drop', (e) => {
-        e.preventDefault();
-        photoDropZone.classList.remove('drag-over');
-        if (e.dataTransfer.files.length > 0) {
-            photoUpload.files = e.dataTransfer.files;
-            handleFiles(photoUpload.files);
-        }
-    });
-
     // Handle file input change
     photoUpload.addEventListener('change', () => {
         if (photoUpload.files.length > 0) {
             handleFiles(photoUpload.files);
+            
+            // Update the file count display
+            const fileCount = document.getElementById('file-count');
+            if (fileCount) {
+                fileCount.textContent = `${photoUpload.files.length} fișiere selectate`;
+            }
+        }
+    });
+    
+    // Handle remove image button clicks
+    document.addEventListener('click', (e) => {
+        if (e.target.classList.contains('remove-image')) {
+            const container = e.target.closest('.preview-image-container');
+            if (container) {
+                container.remove();
+                
+                // Update the file count display
+                const fileCount = document.getElementById('file-count');
+                const remainingImages = document.querySelectorAll('.preview-image-container').length;
+                if (fileCount) {
+                    fileCount.textContent = remainingImages > 0 ? `${remainingImages} fișiere selectate` : '';
+                }
+                
+                // Update the file input files
+                const dataTransfer = new DataTransfer();
+                document.querySelectorAll('.preview-image-container').forEach(img => {
+                    const file = img.dataset.file;
+                    if (file) {
+                        dataTransfer.items.add(file);
+                    }
+                });
+                photoUpload.files = dataTransfer.files;
+            }
         }
     });
 
