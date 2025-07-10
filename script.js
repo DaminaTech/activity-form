@@ -772,6 +772,79 @@ function initForm() {
             return;
         }
 
+        // --- Add 'faza' and 'frecventa' to formData before submission ---
+        const contractId = form.elements['contract']?.value;
+        const locationId = form.elements['locatie']?.value;
+        const buildingName = form.elements['cladire']?.value;
+        const inspectionTypeId = form.elements['tipInspectie']?.value;
+        let fazaValue = '';
+        let frecventaValue = '';
+        
+        if (contractId && data.contracts[contractId]) {
+            const contract = data.contracts[contractId];
+            if (contractId === 'caseta') {
+                // Caseta: faza from building, frecventa and verificari from inspection in building
+                if (locationId && contract.locations[locationId] && buildingName) {
+                    const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
+                    if (building && building.faza) {
+                        fazaValue = building.faza;
+                    }
+                    if (building && building.inspections && inspectionTypeId && building.inspections[inspectionTypeId]) {
+                        const inspection = building.inspections[inspectionTypeId];
+                        frecventaValue = inspection.frequency || '';
+                        // Add checks/verificari for caseta
+                        if (inspection.checks && Array.isArray(inspection.checks)) {
+                            formData.set('verificari', inspection.checks.map(c => c.name ? c.name : c).join(', '));
+                        }
+                    }
+                }
+            } else {
+                // Regular contracts: faza from building, frecventa from global inspectionTypes
+                if (locationId && contract.locations[locationId] && buildingName) {
+                    const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
+                    if (building && building.faza) {
+                        fazaValue = building.faza;
+                    }
+                }
+                if (inspectionTypeId && contract.inspectionTypes && contract.inspectionTypes[inspectionTypeId]) {
+                    const inspectionType = contract.inspectionTypes[inspectionTypeId];
+                    frecventaValue = inspectionType.frequency || '';
+                }
+            }
+        }
+        if (fazaValue) formData.set('faza', fazaValue);
+        if (frecventaValue) formData.set('frecventa', frecventaValue);
+
+        // Always collect only the selected checks for 'verificari'
+        const selectedChecks = Array.from(document.querySelectorAll('#checksContainer input[type="checkbox"]:checked'))
+            .map(cb => cb.nextElementSibling.textContent.trim());
+        if (selectedChecks.length > 0) {
+            formData.set('verificari', selectedChecks.join(', '));
+        } else {
+            formData.delete('verificari'); // Remove if none selected
+        }
+
+        // For 'caseta', set frecventa as joined frequencies of selected checks
+        if (contractId === 'caseta' && contractId && data.contracts[contractId]) {
+            const contract = data.contracts[contractId];
+            if (locationId && contract.locations[locationId] && buildingName) {
+                const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
+                if (building && building.inspections && inspectionTypeId && building.inspections[inspectionTypeId]) {
+                    const inspection = building.inspections[inspectionTypeId];
+                    // Find frequencies for selected checks
+                    const selectedFrequencies = inspection.checks
+                        .filter(check => selectedChecks.includes(check.name))
+                        .map(check => check.frequency)
+                        .filter(Boolean);
+                    if (selectedFrequencies.length > 0) {
+                        formData.set('frecventa', selectedFrequencies.join('; '));
+                    } else {
+                        formData.delete('frecventa');
+                    }
+                }
+            }
+        }
+
         try {
             await submitToN8N(formData);
             alert('Raport trimis cu succes!');
