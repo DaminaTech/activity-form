@@ -556,10 +556,8 @@ async function submitToN8N(formData) {
         }
 
         const result = await response.json();
-        console.log('Date trimise cu succes:', result);
         return result;
     } catch (error) {
-        console.error('Eroare la trimiterea datelor:', error);
         throw error;
     }
 };
@@ -733,7 +731,7 @@ function initForm() {
 
         requiredFields.forEach(field => {
             // Debug log for each field being validated
-            console.log('Validating field:', field.name || field.id, field);
+            
             // If the field is not visible, skip it
             if (field.offsetParent === null) return;
             // For checkboxes/radios, check if any in the group is checked
