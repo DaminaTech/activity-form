@@ -336,19 +336,19 @@ const data = {
                                 'constructii_din_beton-pasarela_de_trecere_elementele_de_beton_aferente_golurilor_tehnologice_de_la_Camera_de_Racord_1': {
                                     name: 'Constructii din beton - pasarela de trecere, elementele de beton aferente golurilor tehnologice de la Camera de Racord 1',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct'},
-                                        {name: 'Reparatii tencuieli', frequency: 'apr, oct'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct' },
+                                        { name: 'Reparatii tencuieli', frequency: 'apr, oct' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug' },
                                     ]
                                 },
                                 'elemente_metalice_zona_Camera_de_Racord_1': {
                                     name: 'Elemente metalice - zona Camera de Racord 1',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                        { name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare suduri', frequency: 'aug' },
+                                        { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 }
                             }
@@ -359,38 +359,37 @@ const data = {
                                 'constructii_din_beton_pasarela_de_trecere_elementele_de_beton_aferente_golurilor_tehnologice_elementele_de_sustinere_zona_laterala_de_descarcare_amenajata_spre_raul_Dambovita_de_la_Camera_de_Racord_2': {
                                     name: 'Constructii din beton - pasarela de trecere, elementele de beton aferente golurilor tehnologice, elemente de sustinere, zona laterala de descarcare amenajata spre raul Dambovita de la Camera de Racord 2',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct'},
-                                        {name: 'Reparatii tencuieli', frequency: 'apr, oct'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct' },
+                                        { name: 'Reparatii tencuieli', frequency: 'apr, oct' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug' },
                                     ]
                                 },
                                 'elemente_metalice_zona_Camera_de_Racord_2': {
                                     name: 'Elemente metalice - zona Camera de Racord 2',
-                                    checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                    checks: [{ name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                    { name: 'Verificare suduri', frequency: 'aug' },
+                                    { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 },
                                 'echipamnete_hidromecanice_cu_manevrare_locala_sau_la_distanta_zona_Camera_de_Racord_2': {
                                     name: 'Echipamnete hidromecanice - cu manevrare locala sau la distanta  - zona Camera de Racord 2',
                                     checks: [
-                                        {name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Gresarea elementelor de contact', frequency: 'apr, oct'},
-                                        {name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec'},
+                                        { name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Gresarea elementelor de contact', frequency: 'apr, oct' },
+                                        { name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec' },
                                     ]
                                 },
                                 'constructii_din_beton_casetele_de_legatura_intre_CR2_si_CR3': {
                                     name: 'Constructii din beton - casetele de legatura intre CR2 si CR3',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar'},
-                                        {name: 'Reparatii tencuieli', frequency: 'mar'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar' },
+                                        { name: 'Reparatii tencuieli', frequency: 'mar' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar' },
                                     ]
                                 }
                             }
@@ -401,48 +400,48 @@ const data = {
                                 'constructii_din_beton_casetele_de_legatura_intre_CR2_si_CR3': {
                                     name: 'Constructii din beton - casetele de legatura intre CR2 si CR3',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar'},
-                                        {name: 'Reparatii tencuieli', frequency: 'mar'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar' },
+                                        { name: 'Reparatii tencuieli', frequency: 'mar' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar' },
                                     ]
                                 },
                                 'constructii_din_beton_pasarela_de_trecere_elementele_de_sustinere_zona_laterala_de_descarcare_amenajata_spre_raul_Dambovita_de_la_Camera_de_Racord_2': {
                                     name: 'Constructii din beton - pasarela de trecere, elementele de sustinere - Camera de Racord 3',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct'},
-                                        {name: 'Reparatii tencuieli', frequency: 'apr, oct'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct' },
+                                        { name: 'Reparatii tencuieli', frequency: 'apr, oct' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug' },
                                     ]
                                 },
                                 'constructii_din_beton_elementele_de_beton_aferente_golurilor_tehnologice_zona_laterala_de_descarcare_amenajata_spre_raul_Dambovita_de_la_Camera_de_Racord_3': {
                                     name: 'Constructii din beton -  elementele de beton aferente golurilor tehnologice - zona laterala de descarcare amenajata spre raul Dambovita de la Camera de Racord 3',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, mar, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar'},
-                                        {name: 'Reparatii tencuieli', frequency: 'mar'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'ian, mar, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'mar' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'mar' },
+                                        { name: 'Reparatii tencuieli', frequency: 'mar' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'mar' },
                                     ]
                                 },
                                 'elemente_metalice_zona_Camera_de_Racord_3': {
                                     name: 'Elemente metalice - zona Camera de Racord 3',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                        { name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare suduri', frequency: 'aug' },
+                                        { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 },
                                 'echipamnete_hidromecanice_cu_manevrare_locala_sau_la_distanta_zona_Camera_de_Racord_3': {
                                     name: 'Echipamnete hidromecanice - cu manevrare locala sau la distanta  - zona Camera de Racord 3',
                                     checks: [
-                                        {name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Gresarea elementelor de contact', frequency: 'apr, oct'},
-                                        {name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec'},
+                                        { name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Gresarea elementelor de contact', frequency: 'apr, oct' },
+                                        { name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec' },
                                     ]
                                 }
                             }
@@ -453,18 +452,18 @@ const data = {
                                 'Elemente metalice - zona Descarcator Camera A4': {
                                     name: 'Elemente metalice - zona Descarcator Camera A4',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                        { name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare suduri', frequency: 'aug' },
+                                        { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 },
                                 'echipamnete_hidromecanice_cu_manevrare_locala_sau_la_distanta_zona_Descarcator_Camera_A4': {
                                     name: 'Echipamnete hidromecanice - cu manevrare locala sau la distanta - zona Descarcator Camera A4',
                                     checks: [
-                                        {name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Gresarea elementelor de contact', frequency: 'apr, oct'},
-                                        {name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec'},
+                                        { name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Gresarea elementelor de contact', frequency: 'apr, oct' },
+                                        { name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec' },
                                     ]
                                 }
                             }
@@ -475,28 +474,28 @@ const data = {
                                 'constructii_din_beton_camin_de_receptie_si_elementele_de_beton_aferente_golurilor_tehnologice_de_la_Capcana_de_Pietris': {
                                     name: 'Constructii din beton - camin de receptie si elementele de beton aferente golurilor tehnologice de la Capcana de Pietris',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct'},
-                                        {name: 'Reparatii tencuieli', frequency: 'apr, oct'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct' },
+                                        { name: 'Reparatii tencuieli', frequency: 'apr, oct' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug' },
                                     ]
                                 },
                                 'elemente_metalice_zona_Capcana_de_Pietris': {
                                     name: 'Elemente metalice - zona Capcana de Pietris',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                        { name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare suduri', frequency: 'aug' },
+                                        { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 },
                                 'echipamnete_hidromecanice_cu_manevrare_locala_sau_la_distanta_zona_Capcana_de_Pietris': {
                                     name: 'Echipamnete hidromecanice - cu manevrare locala sau la distanta - zona Capcana de Pietris',
                                     checks: [
-                                        {name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Gresarea elementelor de contact', frequency: 'apr, oct'},
-                                        {name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec'},
+                                        { name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Gresarea elementelor de contact', frequency: 'apr, oct' },
+                                        { name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec' },
                                     ]
                                 }
                             }
@@ -508,28 +507,28 @@ const data = {
                                 'constructii_din_beton_pasarele_de_trecere_trepte_elementele_de_beton_aferente_golurilor_tehnologice_tronsoanele_de_descarcare_amenajate_spre_raul_Dambovita_aferente_Canalului_de_legatura': {
                                     name: 'Constructii din beton - pasarele de trecere, trepte, elementele de beton aferente golurilor tehnologice, tronsoanele de descarcare amenajate spre raul Dambovita aferente Canalului de legatura',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct'},
-                                        {name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct'},
-                                        {name: 'Reparatii tencuieli', frequency: 'apr, oct'},
-                                        {name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug'},
+                                        { name: 'Inspectie vizuala a elementelor constructive', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Servicii de reparatii fisuri locale de suprafata', frequency: 'apr, oct' },
+                                        { name: 'Servicii de refacere etanseitate rosturi de suprafata, respectiv tratare si sigilare rosturi de dilatare pentru marirea durabilitatii in timp', frequency: 'apr, oct' },
+                                        { name: 'Reparatii tencuieli', frequency: 'apr, oct' },
+                                        { name: 'Aplicare strat bitum pentru refacere hidroizolatie', frequency: 'aug' },
                                     ]
                                 },
                                 'elemente_metalice_zona_Canal_de_legatura': {
                                     name: 'Elemente metalice - zona Canal de legatura',
                                     checks: [
-                                        {name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare suduri', frequency: 'aug'},
-                                        {name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept'},
+                                        { name: 'Inspectie vizuala a elementelor metalice', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare suduri', frequency: 'aug' },
+                                        { name: 'Curătare, grunduire si vopsire Inspectie vizuala a elementelor constructive', frequency: 'sept' },
                                     ]
                                 },
                                 'echipamnete_hidromecanice_cu_manevrare_locala_sau_la_distanta_zona_Canal_de_legatura': {
                                     name: 'Echipamnete hidromecanice - cu manevrare locala sau la distanta - zona Canal de legatura',
                                     checks: [
-                                        {name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec'},
-                                        {name: 'Gresarea elementelor de contact', frequency: 'apr, oct'},
-                                        {name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec'},
+                                        { name: 'Inspectie vizuala', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Verificare echipamente culisante pe calea de rulare existenta', frequency: 'mar, iun, sept, dec' },
+                                        { name: 'Gresarea elementelor de contact', frequency: 'apr, oct' },
+                                        { name: 'Degivrarea elementelor de contact', frequency: 'ian, feb, mar, nov, dec' },
                                     ]
                                 }
                             }
@@ -563,7 +562,7 @@ async function submitToN8N(formData) {
         console.error('Eroare la trimiterea datelor:', error);
         throw error;
     }
-}
+};
 
 // Funcție pentru obținerea verificărilor selectate
 function getSelectedChecks() {
@@ -616,8 +615,28 @@ function initForm() {
         return;
     }
 
-    // --- Get all form elements ---
+    // --- Populate contract select at the very start ---
     const contractSelect = document.getElementById('contractSelect');
+    contractSelect.innerHTML = '<option value="">Alegeți...</option>';
+    Object.entries(data.contracts).forEach(([id, contract]) => {
+        contractSelect.innerHTML += `<option value="${id}">${contract.name}</option>`;
+    });
+
+    // --- Get all form elements ---
+
+    // Activity type radios
+    const activityTypeRadios = form.querySelectorAll('input[name="tipActivitate"]');
+    if (activityTypeRadios.length) {
+        activityTypeRadios.forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'inspectie') {
+                    // Clear intervention fields when switching to inspection
+                    if (form.elements['operatiuniIntreprinse']) form.elements['operatiuniIntreprinse'].value = '';
+                    if (form.elements['materialeSculeFolosite']) form.elements['materialeSculeFolosite'].value = '';
+                }
+            });
+        });
+    }
     const locationSection = document.getElementById('locationSection');
     const locationSelect = document.getElementById('locationSelect');
     const buildingSection = document.getElementById('buildingSection');
@@ -655,6 +674,117 @@ function initForm() {
     };
 
     // --- Event Listeners ---
+
+    // Proper form submit handler
+    form.addEventListener('submit', async function (e) {
+        // If probleme is 'nu', clear problem fields before collecting data
+        const problemeValue = form.querySelector('input[name="probleme"]:checked')?.value;
+        if (problemeValue === 'nu') {
+            form.elements['problemeIdentificate'].value = '';
+            form.elements['solutieTehnica'].value = '';
+            form.elements['problemeMateriale'].value = '';
+            // Also clear the 'materiale' field if it exists (sometimes named 'materiale' or 'problemMaterials')
+            if (form.elements['materiale']) form.elements['materiale'].value = '';
+            if (form.elements['problemMaterials']) form.elements['problemMaterials'].value = '';
+            // Uncheck lucrareFinalizata radios
+            form.querySelectorAll('input[name="lucrareFinalizata"]').forEach(radio => radio.checked = false);
+        }
+        e.preventDefault();
+        const formData = new FormData(form);
+        // Remove previous validation state
+        form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
+        // Hide all invalid-feedback
+        form.querySelectorAll('.invalid-feedback').forEach(el => el.style.display = 'none');
+
+        // Find all required and visible fields
+        const requiredFields = form.querySelectorAll('[required]:not([type="hidden"])');
+        let firstInvalid = null;
+        let valid = true;
+
+        // Custom validation for Verificări necesare (checks)
+        const checksContainer = document.getElementById('checksContainer');
+        const checks = checksContainer ? checksContainer.querySelectorAll('input[type="checkbox"]') : [];
+        const checksInvalidFeedback = document.getElementById('checksInvalidFeedback');
+        if (checks.length > 0) {
+            const checked = Array.from(checks).some(chk => chk.checked);
+            checksInvalidFeedback.style.display = 'none';
+            if (!checked) {
+                checksInvalidFeedback.style.display = 'block';
+                checks[0].focus();
+                valid = false;
+                if (!firstInvalid) firstInvalid = checks[0];
+            }
+        }
+
+        // Custom validation for photo upload (require at least one photo in preview)
+        const photoPreview = document.getElementById('photo-preview');
+        const photoUploadInvalidFeedback = document.getElementById('photoUploadInvalidFeedback');
+        if (photoPreview) {
+            photoUploadInvalidFeedback.style.display = 'none';
+            if (!photoPreview.children || photoPreview.children.length === 0) {
+                photoUploadInvalidFeedback.style.display = 'block';
+                // Try to focus the upload button for accessibility
+                const uploadBtn = document.getElementById('fileUploadButton');
+                if (uploadBtn) uploadBtn.focus();
+                valid = false;
+                if (!firstInvalid) firstInvalid = uploadBtn || photoPreview;
+            }
+        }
+
+        requiredFields.forEach(field => {
+            // Debug log for each field being validated
+            console.log('Validating field:', field.name || field.id, field);
+            // If the field is not visible, skip it
+            if (field.offsetParent === null) return;
+            // For checkboxes/radios, check if any in the group is checked
+            if ((field.type === 'radio' || field.type === 'checkbox') && field.name) {
+                const group = form.querySelectorAll(`[name="${field.name}"]`);
+                const checked = Array.from(group).some(input => input.checked);
+                if (!checked) {
+                    group.forEach(input => input.classList.add('is-invalid'));
+                    if (!firstInvalid) firstInvalid = field;
+                    valid = false;
+                }
+            } else if (field.tagName === 'SELECT') {
+                // For selects, check for empty value or disabled default option
+                const feedback = field.nextElementSibling;
+                if (!field.value || field.value === '' || field.options[field.selectedIndex].disabled) {
+                    field.classList.add('is-invalid');
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.style.display = 'block';
+                    }
+                    if (!firstInvalid) firstInvalid = field;
+                    valid = false;
+                } else {
+                    // If valid, remove error state
+                    field.classList.remove('is-invalid');
+                    if (feedback && feedback.classList.contains('invalid-feedback')) {
+                        feedback.style.display = 'none';
+                    }
+                }
+            } else if (!field.value) {
+                field.classList.add('is-invalid');
+                if (!firstInvalid) firstInvalid = field;
+                valid = false;
+            }
+        });
+
+        if (!valid) {
+            if (firstInvalid) firstInvalid.focus();
+            return;
+        }
+
+        try {
+            await submitToN8N(formData);
+            alert('Raport trimis cu succes!');
+            form.reset();
+            document.querySelectorAll('.hidden-section').forEach(el => el.style.display = 'none');
+            if (typeof photoPreview !== 'undefined') photoPreview.innerHTML = '';
+        } catch (error) {
+            console.error('Submission failed:', error);
+            alert('Eroare la trimiterea formularului. Verificați consola pentru detalii.');
+        }
+    });
 
     // 1. Contract Change
     contractSelect.addEventListener('change', () => {
@@ -698,31 +828,31 @@ function initForm() {
         const contractId = contractSelect.value;
         const locationId = locationSelect.value;
         const buildingName = buildingSelect.value;
-        
+
         if (!buildingName) return;
-        
+
         // Show zone input for non-caseta contracts
         if (contractId !== 'caseta') {
             zoneInputSection.style.display = 'block';
             return;
         }
-        
+
         // For caseta contract, show inspection types specific to the selected building
         const contract = data.contracts[contractId];
         if (!contract || !contract.locations[locationId]) return;
-        
+
         // Find the selected building
         const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
         if (!building || !building.inspections) return;
-        
+
         // Populate inspection types from the building's inspections
         inspectionTypeSection.style.display = 'block';
         inspectionTypeSelect.innerHTML = '<option value="" selected disabled>Alegeți...</option>';
-        
+
         Object.entries(building.inspections).forEach(([id, inspection]) => {
             inspectionTypeSelect.innerHTML += `<option value="${id}">${inspection.name}</option>`;
         });
-        
+
         // Show inspection details section if not already shown
         inspectionDetailsSection.style.display = 'block';
         inspectionProblemsSection.style.display = 'block';
@@ -745,17 +875,40 @@ function initForm() {
                         inspectionTypeSelect.innerHTML += `<option value="${id}">${type.name}</option>`;
                     });
                 }
+                // Always set required on Tip Inspecție select for inspectie
+                inspectionTypeSelect.setAttribute('required', 'required');
+                // Remove required from interventie fields
+                document.getElementsByName('operatiuniIntreprinse')[0]?.removeAttribute('required');
+                document.getElementsByName('materialeSculeFolosite')[0]?.removeAttribute('required');
+                // Problems section: only 'probleme' is required by default, others handled by probleme change
+                document.querySelectorAll('input[name="probleme"]').forEach(r => r.setAttribute('required', 'required'));
+                document.getElementsByName('problemeIdentificate')[0]?.removeAttribute('required');
+                document.getElementsByName('solutieTehnica')[0]?.removeAttribute('required');
+                document.getElementsByName('problemeMateriale')[0]?.removeAttribute('required');
+                document.querySelectorAll('input[name="lucrareFinalizata"]').forEach(r => r.removeAttribute('required'));
             } else if (activityType === 'interventie') {
                 inspectionDetailsSection.style.display = 'none';
                 inspectionProblemsSection.style.display = 'none';
                 interventionDetailsSection.style.display = 'block';
-            }
-            // Reset sections below
-            resetSection(generalChecksSection, checksContainer);
-            resetSection(problemsDetails, problemDescription, technicalSolution, problemMaterials);
-            problemRadios.forEach(r => r.checked = false);
-            workCompletedRadios.forEach(r => r.checked = false);
-        });
+                // Remove required from Tip Inspecție select for interventie
+                inspectionTypeSelect.removeAttribute('required');
+                // Add required to interventie fields
+                document.getElementsByName('operatiuniIntreprinse')[0]?.setAttribute('required', 'required');
+                document.getElementsByName('materialeSculeFolosite')[0]?.setAttribute('required', 'required');
+                // Remove required from all problems section fields
+                document.querySelectorAll('input[name="probleme"]').forEach(r => r.removeAttribute('required'));
+                document.getElementsByName('problemeIdentificate')[0]?.removeAttribute('required');
+                document.getElementsByName('solutieTehnica')[0]?.removeAttribute('required');
+                document.getElementsByName('problemeMateriale')[0]?.removeAttribute('required');
+                document.querySelectorAll('input[name="lucrareFinalizata"]').forEach(r => r.removeAttribute('required'));
+
+                // Reset sections below
+                resetSection(generalChecksSection, checksContainer);
+                resetSection(problemsDetails, problemDescription, technicalSolution, problemMaterials);
+                problemRadios.forEach(r => r.checked = false);
+                workCompletedRadios.forEach(r => r.checked = false);
+            }});
+    
     });
 
     // 5. Inspection Type Change
@@ -764,23 +917,23 @@ function initForm() {
         const locationId = locationSelect.value;
         const buildingName = buildingSelect.value;
         const inspectionTypeId = inspectionTypeSelect.value;
-        
+
         checksContainer.innerHTML = ''; // Reset checks
         generalChecksSection.style.display = 'none';
-        
+
         if (!contractId || !inspectionTypeId) {
             return;
         }
-        
+
         if (contractId === 'caseta') {
             // Handle caseta contract with building-specific inspections
             const contract = data.contracts[contractId];
             if (!contract || !contract.locations[locationId]) return;
-            
+
             // Find the selected building
             const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
             if (!building || !building.inspections) return;
-            
+
             // Get the selected inspection
             const inspection = building.inspections[inspectionTypeId];
             if (!inspection || !inspection.checks) return;
@@ -808,7 +961,7 @@ function initForm() {
             // Handle regular contracts with global inspection types
             const contract = data.contracts[contractId];
             if (!contract || !contract.inspectionTypes) return;
-            
+
             const inspectionType = contract.inspectionTypes[inspectionTypeId];
             if (!inspectionType || !inspectionType.checks) return;
 
@@ -839,12 +992,18 @@ function initForm() {
         radio.addEventListener('change', () => {
             if (radio.value === 'da' && radio.checked) {
                 problemsDetails.style.display = 'block';
-                problemDescription.required = true;
-                technicalSolution.required = true;
+                // Set required on all fields in the problems section
+                document.getElementsByName('problemeIdentificate')[0]?.setAttribute('required', 'required');
+                document.getElementsByName('solutieTehnica')[0]?.setAttribute('required', 'required');
+                document.getElementsByName('problemeMateriale')[0]?.setAttribute('required', 'required');
+                document.querySelectorAll('input[name="lucrareFinalizata"]').forEach(r => r.setAttribute('required', 'required'));
             } else {
                 problemsDetails.style.display = 'none';
-                problemDescription.required = false;
-                technicalSolution.required = false;
+                // Remove required from all fields in the problems section
+                document.getElementsByName('problemeIdentificate')[0]?.removeAttribute('required');
+                document.getElementsByName('solutieTehnica')[0]?.removeAttribute('required');
+                document.getElementsByName('problemeMateriale')[0]?.removeAttribute('required');
+                document.querySelectorAll('input[name="lucrareFinalizata"]').forEach(r => r.removeAttribute('required'));
             }
         });
     });
@@ -853,23 +1012,23 @@ function initForm() {
     function handleFiles(files) {
         // Only keep the first 6 files if more are selected
         const filesToProcess = Array.from(files).slice(0, 6);
-        
+
         // Clear existing previews if we're replacing them
         if (filesToProcess.length > 0) {
             photoPreview.innerHTML = '';
         }
-        
+
         filesToProcess.forEach((file, index) => {
             const reader = new FileReader();
             reader.onload = (e) => {
                 const container = document.createElement('div');
                 container.className = 'preview-image-container';
-                
+
                 const img = document.createElement('img');
                 img.src = e.target.result;
                 img.className = 'preview-image';
                 img.alt = `Preview ${index + 1}`;
-                
+
                 const removeBtn = document.createElement('button');
                 removeBtn.className = 'remove-image';
                 removeBtn.innerHTML = '×';
@@ -878,11 +1037,11 @@ function initForm() {
                     e.stopPropagation();
                     container.remove();
                 };
-                
+
                 const fileInfo = document.createElement('div');
                 fileInfo.className = 'file-info';
                 fileInfo.textContent = `${file.name} (${formatFileSize(file.size)})`;
-                
+
                 container.appendChild(img);
                 container.appendChild(removeBtn);
                 container.appendChild(fileInfo);
@@ -890,7 +1049,7 @@ function initForm() {
             };
             reader.readAsDataURL(file);
         });
-    }
+    };
 
     // Helper function to format file size
     function formatFileSize(bytes) {
@@ -905,7 +1064,7 @@ function initForm() {
     photoUpload.addEventListener('change', () => {
         if (photoUpload.files.length > 0) {
             handleFiles(photoUpload.files);
-            
+
             // Update the file count display
             const fileCount = document.getElementById('file-count');
             if (fileCount) {
@@ -913,151 +1072,43 @@ function initForm() {
             }
         }
     });
-    
+
     // Handle remove image button clicks
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('remove-image')) {
-            const container = e.target.closest('.preview-image-container');
-            if (container) {
-                container.remove();
-                
-                // Update the file count display
-                const fileCount = document.getElementById('file-count');
-                const remainingImages = document.querySelectorAll('.preview-image-container').length;
-                if (fileCount) {
-                    fileCount.textContent = remainingImages > 0 ? `${remainingImages} fișiere selectate` : '';
-                }
-                
-                // Update the file input files
-                const dataTransfer = new DataTransfer();
-                document.querySelectorAll('.preview-image-container').forEach(img => {
-                    const file = img.dataset.file;
-                    if (file) {
-                        dataTransfer.items.add(file);
-                    }
-                });
-                photoUpload.files = dataTransfer.files;
-            }
-        }
-    });
-
-    // --- Form Submission ---
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const originalButtonText = submitButton.textContent;
-        submitButton.disabled = true;
-        submitButton.textContent = 'Se trimite...';
-
+    document.addEventListener('click', async (e) => {
         try {
-            const formData = new FormData(form);
-            const photoFiles = Array.from(photoUpload.files);
-            
-            // Ensure lucrareFinalizata is always included in form data
-            if (!formData.has('lucrareFinalizata')) {
-                formData.append('lucrareFinalizata', '');
-            }
+            if (e.target.classList.contains('remove-image')) {
+                const container = e.target.closest('.preview-image-container');
+                if (container) {
+                    container.remove();
 
-            if (photoFiles.length < 3 || photoFiles.length > 6) {
-                alert('Trebuie să încărcați între 3 și 6 fotografii.');
-                throw new Error('Incorrect number of photos');
-            }
-
-            // Clear any existing file entries and append files with the correct field name
-            formData.delete('photoUpload'); // Remove any existing entries
-
-            // Append each file with the same field name 'photoUpload'
-            photoFiles.forEach(file => {
-                formData.append('photoUpload', file);
-            });
-
-            // Debug: Log form data keys
-            console.log('FormData entries:');
-            for (let pair of formData.entries()) {
-                console.log(pair[0], pair[1]);
-            }
-            
-            // Add photo URLs to form data for Airtable
-            const photoUrls = Array.from(photoFiles).map(file => ({
-                url: URL.createObjectURL(file),
-                name: file.name,
-                type: file.type
-            }));
-            
-            // Add as JSON string to be parsed by n8n
-            formData.append('photoInfo', JSON.stringify(photoUrls));
-
-            // Add frequency and phase data
-            const contractId = formData.get('contract');
-            const locationId = formData.get('locatie');
-            const buildingName = formData.get('cladire');
-            const inspectionTypeKey = formData.get('tipInspectie');
-            const contract = data.contracts[contractId];
-            
-            let fazaValue = '';  // Default empty value for faza
-            
-            if (!contract) {
-                console.error('Contract not found:', contractId);
-                return;
-            }
-
-            // Handle inspection type and frequency based on contract type
-            if (contractId === 'caseta') {
-                // For caseta contract, get inspection details from the building's inspections
-                if (locationId && contract.locations[locationId] && buildingName) {
-                    const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
-                    if (building && building.inspections && inspectionTypeKey && building.inspections[inspectionTypeKey]) {
-                        const inspection = building.inspections[inspectionTypeKey];
-                        formData.set('tipInspectie', inspection.name);
-                        formData.append('frecventa', inspection.frequency || 'lunar'); // Default to 'lunar' if not specified
+                    // Update the file count display
+                    const fileCount = document.getElementById('file-count');
+                    const remainingImages = document.querySelectorAll('.preview-image-container').length;
+                    if (fileCount) {
+                        fileCount.textContent = remainingImages > 0 ? `${remainingImages} fișiere selectate` : '';
                     }
-                    
-                    if (building && building.faza) {
-                        formData.append('faza', building.faza);
-                    }
-                }
-            } else {
-                // For other contracts, use the global inspectionTypes
-                if (inspectionTypeKey && contract.inspectionTypes && contract.inspectionTypes[inspectionTypeKey]) {
-                    const inspectionConfig = contract.inspectionTypes[inspectionTypeKey];
-                    formData.set('tipInspectie', inspectionConfig.name);
-                    formData.append('frecventa', inspectionConfig.frequency || 'lunar');
-                }
-                
-                // Add phase information for non-caseta contracts if available
-                if (locationId && contract.locations[locationId] && buildingName) {
-                    const building = contract.locations[locationId].buildings.find(b => b.name === buildingName);
-                    if (building && building.faza) {
-                        formData.append('faza', building.faza);
-                    }
-                }
-            }
 
-            // Set the final faza value before submission
-            formData.set('faza', fazaValue);
-            
-            await submitToN8N(formData);
-            alert('Raport trimis cu succes!');
-            form.reset();
-            // Manually reset UI state after successful submission
-            document.querySelectorAll('.hidden-section').forEach(el => el.style.display = 'none');
-            photoPreview.innerHTML = '';
-
+                    // Update the file input files
+                    const dataTransfer = new DataTransfer();
+                    document.querySelectorAll('.preview-image-container').forEach(img => {
+                        const file = img.dataset.file;
+                        if (file) {
+                            dataTransfer.items.add(file);
+                        }
+                    });
+                }
+            } // End image removal logic
         } catch (error) {
-            console.error('Submission failed:', error);
-            if (error.message !== 'Incorrect number of photos') {
-                alert('Eroare la trimiterea formularului. Verificați consola pentru detalii.');
-            }
-        } finally {
-            submitButton.disabled = false;
-            submitButton.textContent = originalButtonText;
+            // Only handle errors related to image removal
+            console.error('Image removal failed:', error);
         }
     });
 
-    // --- Initial State ---
-    Object.entries(data.contracts).forEach(([id, contract]) => {
-        contractSelect.innerHTML += `<option value="${id}">${contract.name}</option>`;
-    });
 
 }
 
-document.addEventListener('DOMContentLoaded', initForm);
+document.addEventListener('DOMContentLoaded', () => {
+    // Clear all radio buttons on load for cross-browser consistency
+    document.querySelectorAll('input[type=radio]').forEach(radio => radio.checked = false);
+    initForm();
+});

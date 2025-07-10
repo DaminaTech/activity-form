@@ -13,7 +13,7 @@
             <h1 class="form-title">Formular Activitate Zilnică</h1>
             <p class="form-subtitle text-center mb-4">Completați detaliile de mai jos.</p>
 
-            <form id="constructionForm" enctype="multipart/form-data" method="POST">
+            <form id="constructionForm" enctype="multipart/form-data" method="POST" novalidate>
                 <!-- SECTION 1: General Info -->
                 <div class="form-section">
                     <h2 class="section-title">Informații Generale</h2>
@@ -22,11 +22,13 @@
                             <label for="activityDate" class="form-label required">Data Activității</label>
                             <div class="date-input-container">
                                 <input type="date" class="form-control" id="activityDate" name="dataActivitate" required>
+                                <div class="invalid-feedback">Te rog completează data activității.</div>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="teamMembers" class="form-label">Echipa Implicată</label>
-                            <input type="text" class="form-control" id="teamMembers" name="teamMembers" placeholder="Nume separate prin virgulă">
+                            <input type="text" class="form-control" id="teamMembers" name="teamMembers" placeholder="Nume separate prin virgulă" required>
+<div class="invalid-feedback">Te rog completează echipa implicată.</div>
                         </div>
                     </div>
                     <div class="row">
@@ -35,18 +37,21 @@
                             <select class="form-select" id="contractSelect" name="contract" required>
                                 <option value="" selected disabled>Alegeți...</option>
                             </select>
+                            <div class="invalid-feedback">Te rog selectează un contract.</div>
                         </div>
                         <div class="col-md-4 mb-3 hidden-section" id="locationSection">
                             <label for="locationSelect" class="form-label required">Locație</label>
                             <select class="form-select" id="locationSelect" name="locatie" required>
                                 <option value="" selected disabled>Alegeți...</option>
                             </select>
+                            <div class="invalid-feedback">Te rog selectează o locație.</div>
                         </div>
                         <div class="col-md-4 mb-3 hidden-section" id="buildingSection">
                             <label for="buildingSelect" class="form-label required">Clădire</label>
                             <select class="form-select" id="buildingSelect" name="cladire" required>
                                 <option value="" selected disabled>Alegeți...</option>
                             </select>
+                            <div class="invalid-feedback">Te rog selectează o clădire.</div>
                         </div>
                     </div>
                      <div class="mb-3 hidden-section" id="zoneInputSection">
@@ -59,24 +64,26 @@
                 <div class="form-section" >
                     <h2 class="section-title">Tipul Activității</h2>
                     <div class="mb-3">
-                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipActivitate" id="activityInspection" value="inspectie" required>
-                            <label class="form-check-label" for="activityInspection">Inspecție</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="tipActivitate" id="activityIntervention" value="interventie" required>
-                            <label class="form-check-label" for="activityIntervention">Intervenție</label>
-                        </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipActivitate" id="activityInspection" value="inspectie" required>
+                                <label class="form-check-label" for="activityInspection">Inspecție</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="tipActivitate" id="activityIntervention" value="interventie" required>
+                                <label class="form-check-label" for="activityIntervention">Intervenție</label>
+                            </div>
+                            <div class="invalid-feedback">Te rog selectează tipul de activitate.</div>
                     </div>
                     
                     <!-- Inspection Details -->
                     <div id="inspectionDetailsSection" class="hidden-section">
                         <div class="row">
                             <div class="col-md-6 mb-3" id="inspectionTypeSection">
-                                <label for="inspectionTypeSelect" class="form-label">Tip Inspecție</label>
+                                <label for="inspectionTypeSelect" class="form-label required">Tip Inspecție</label>
                                 <select class="form-select" id="inspectionTypeSelect" name="tipInspectie">
                                      <option value="" selected disabled>Alegeți...</option>
                                 </select>
+                                <div class="invalid-feedback">Te rog selectează tipul de inspecție.</div>
                             </div>
                         </div>
                         <div class="mb-3 hidden-section" id="generalChecksSection">
@@ -84,18 +91,21 @@
                             <div id="checksContainer" class="checks-container">
                                 <!-- Checkboxes will be generated here -->
                             </div>
+                            <div class="invalid-feedback" id="checksInvalidFeedback" style="display:none;">Te rog selectează cel puțin o verificare necesară.</div>
                         </div>
                     </div>
 
                     <!-- Intervention Details -->
                     <div id="interventionDetailsSection" class="hidden-section">
                         <div class="mb-3">
-                            <label for="interventionDetails" class="form-label">Detalii Intervenție / Operațiuni</label>
-                            <textarea class="form-control" id="interventionDetails" name="operatiuniIntreprinse" rows="3"></textarea>
+                            <label for="interventionDetails" class="form-label required">Detalii Intervenție / Operațiuni</label>
+                            <textarea class="form-control" id="interventionDetails" name="operatiuniIntreprinse" rows="3" required></textarea>
+                            <div class="invalid-feedback">Te rog completează detaliile intervenției.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="materialsUsed" class="form-label">Materiale și Scule Folosite</label>
-                            <textarea class="form-control" id="materialsUsed" name="materialeSculeFolosite" rows="3"></textarea>
+                            <label for="materialsUsed" class="form-label required">Materiale și Scule Folosite</label>
+                            <textarea class="form-control" id="materialsUsed" name="materialeSculeFolosite" rows="3" required></textarea>
+                            <div class="invalid-feedback">Te rog completează materialele și sculele folosite.</div>
                         </div>
                     </div>
                 </div>
@@ -104,40 +114,45 @@
                 <div class="form-section" id="inspectionProblemsSection">
                     <h2 class="section-title">Probleme Identificate</h2>
                     <div class="mb-3">
-                        <label class="form-label">Au fost identificate probleme?</label>
+                        <label class="form-label required">Au fost identificate probleme?</label>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="probleme" id="problemsYes" value="da">
+                            <input class="form-check-input" type="radio" name="probleme" id="problemsYes" value="da" required>
                             <label class="form-check-label" for="problemsYes">Da</label>
                         </div>
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="probleme" id="problemsNo" value="nu">
+                            <input class="form-check-input" type="radio" name="probleme" id="problemsNo" value="nu" required>
                             <label class="form-check-label" for="problemsNo">Nu</label>
                         </div>
+                        <div class="invalid-feedback">Te rog selectează dacă au fost identificate probleme.</div>
                     </div>
 
                     <div id="problemsDetails" class="hidden-section">
                         <div class="mb-3">
-                            <label for="problemDescription" class="form-label">Descriere Probleme</label>
-                            <textarea class="form-control" id="problemDescription" name="problemeIdentificate" rows="3"></textarea>
+                            <label for="problemDescription" class="form-label required">Descriere Probleme</label>
+                            <textarea class="form-control" id="problemDescription" name="problemeIdentificate" rows="3" required></textarea>
+                            <div class="invalid-feedback">Te rog completează descrierea problemelor.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="technicalSolution" class="form-label">Soluție Tehnică Propusă</label>
-                            <textarea class="form-control" id="technicalSolution" name="solutieTehnica" rows="3"></textarea>
+                            <label for="technicalSolution" class="form-label required">Soluție Tehnică Propusă</label>
+                            <textarea class="form-control" id="technicalSolution" name="solutieTehnica" rows="3" required></textarea>
+                            <div class="invalid-feedback">Te rog completează soluția tehnică propusă.</div>
                         </div>
                         <div class="mb-3">
-                            <label for="problemMaterials" class="form-label">Materiale Necesare</label>
-                            <textarea class="form-control" id="problemMaterials" name="problemeMateriale" rows="3"></textarea>
+                            <label for="problemMaterials" class="form-label required">Materiale Necesare</label>
+                            <textarea class="form-control" id="problemMaterials" name="problemeMateriale" rows="3" required></textarea>
+                            <div class="invalid-feedback">Te rog completează materialele necesare.</div>
                         </div>
                          <div class="mb-3">
-                            <label class="form-label">Lucrare Finalizată?</label>
+                            <label class="form-label required">Lucrare Finalizată?</label>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="workCompletedYes" name="lucrareFinalizata" value="da">
+                                <input class="form-check-input" type="radio" id="workCompletedYes" name="lucrareFinalizata" value="da" required>
                                 <label class="form-check-label" for="workCompletedYes">Da</label>
                             </div>
                             <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" id="workCompletedNo" name="lucrareFinalizata" value="nu">
+                                <input class="form-check-input" type="radio" id="workCompletedNo" name="lucrareFinalizata" value="nu" required>
                                 <label class="form-check-label" for="workCompletedNo">Nu</label>
                             </div>
+                            <div class="invalid-feedback">Te rog selectează dacă lucrarea a fost finalizată.</div>
                         </div>
                     </div>
                 </div>
@@ -146,7 +161,8 @@
                 <div class="form-section">
                     <h2 class="section-title">Fotografii</h2>
                      <div class="mb-3">
-                        <input type="file" id="photoUpload" name="photoUpload" multiple accept="image/*" class="d-none">
+                        <input type="file" id="photoUpload" name="photoUpload" multiple accept="image/*" class="d-none" required>
+<div class="invalid-feedback" id="photoUploadInvalidFeedback">Te rog încarcă cel puțin o fotografie.</div>
                         <button type="button" class="btn btn-primary" id="fileUploadButton">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload me-2" viewBox="0 0 16 16">
                                 <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
@@ -202,11 +218,7 @@
             // Handle click on the container
             dateContainer.addEventListener('click', function(e) {
                 e.preventDefault();
-                if (dateInput.showPicker) {
-                    dateInput.showPicker();
-                } else {
-                    dateInput.focus();
-                }
+                dateInput.showPicker();
                 // Focus the input for better mobile support
                 dateInput.focus();
             });
@@ -216,9 +228,7 @@
             if (dateLabel) {
                 dateLabel.addEventListener('click', function(e) {
                     e.preventDefault();
-                    if (dateInput.showPicker) {
-                        dateInput.showPicker();
-                    }
+                    dateInput.showPicker();
                     dateInput.focus();
                 });
                 dateLabel.style.cursor = 'pointer';
