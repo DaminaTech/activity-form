@@ -177,6 +177,27 @@ const data = {
                         "Zugraveala (amorsa si  lavabila)"
                     ],
                     frequency: "lunar"
+                },
+                "instalatii_sanitare": {
+                    name: "Instalatii sanitare si accesorii",
+                    checks: [
+                        "Verificare elemente de inchidere si comanda instalatii sanitare (baterii, robineti)",
+                        "Verificari instalatii canal",
+                        "Mentenanta ventiloconvectoare si instalatii aferente",
+                        "Verificare instalatie alimentare apa rece / calda (GS, chicineta, laborator)",
+                        "Verificare accesorii (dispensere, oglinzi, suporti, perii)",
+                        "Verificare spalator inox",
+                        "Verificare pisoare",
+                        "Verificare baterii actionare mecanica/fotocelula",
+                        "Verificare vase WC standard / Back To Wall",
+                        "Verificare bazine ingropate / semi inaltime",
+                        "Verificare ansamblu ventilatie laboratoare",
+                        "Verificare Sifoane pardoseli",
+                        "Verificare baterii dusuri",
+                        "Inspectii video si desfundare cu jet de apa",
+                        "Verificari robineti lavoare"
+                    ],
+                    frequency: "lunar"
                 }
             },
         },
