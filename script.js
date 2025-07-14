@@ -689,6 +689,11 @@ function initForm() {
         }
         e.preventDefault();
         const formData = new FormData(form);
+        // Patch pentru timezone date picker/Airtable
+        let dateStr = formData.get('dataActivitate');
+        if (dateStr && !dateStr.includes('T')) {
+            formData.set('dataActivitate', dateStr + 'T12:00:00');
+        }
         // Remove previous validation state
         form.querySelectorAll('.is-invalid').forEach(el => el.classList.remove('is-invalid'));
         // Hide all invalid-feedback
