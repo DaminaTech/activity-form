@@ -847,10 +847,12 @@ function initForm() {
 
         try {
             await submitToN8N(formData);
-            alert('Raport trimis cu succes!');
-            form.reset();
+            alert('Felicitari!');
+            setTimeout(() => window.location.reload(), 0);
+            // form.reset();
             document.querySelectorAll('.hidden-section').forEach(el => el.style.display = 'none');
             if (typeof photoPreview !== 'undefined') photoPreview.innerHTML = '';
+
         } catch (error) {
             console.error('Submission failed:', error);
             alert('Eroare la trimiterea formularului. Verificați consola pentru detalii.');
