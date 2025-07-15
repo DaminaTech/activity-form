@@ -95,107 +95,107 @@ const data = {
                 "acoperisuri_terase": {
                     name: "Acoperisuri/terase",
                     checks: [
-                        "Inspectie vizuala hidroizolatii",
-                        "Mici reparatii si interventii remediere hidroizolatie",
-                        "Inspectie parfuranzare si curatare jgheaburi si burlane",
-                        "Verificare sistem fixare suporti existenti pe acoperisuri",
-                        "Curatat manual si/sau mecanizat terase",
-                        "Verificare fixare atice si lucrari de fixare locala si etanseitate",
-                        "Inlaturare gheata si/sau zapada de pe acoperis in zone cu risc de prabusire si risc infiltratie (pe perioada rece cand exista pericol de accidentare)"
+                        { name: "Inspectie vizuala hidroizolatii" },
+                        { name: "Mici reparatii si interventii remediere hidroizolatie" },
+                        { name: "Inspectie parfuranzare si curatare jgheaburi si burlane" },
+                        { name: "Verificare sistem fixare suporti existenti pe acoperisuri" },
+                        { name: "Curatat manual si/sau mecanizat terase" },
+                        { name: "Verificare fixare atice si lucrari de fixare locala si etanseitate" },
+                        { name: "Inlaturare gheata si/sau zapada de pe acoperis in zone cu risc de prabusire si risc infiltratie (pe perioada rece cand exista pericol de accidentare)" }
                     ],
                     frequency: "martie, septembrie"
                 },
                 "fatade": {
                     name: "Fatade",
                     checks: [
-                        "Inspectie vizuala fatade (integral)",
-                        "Lucrari de reparatie fisuri",
-                        "Lucrari de vopsitorie fatade",
-                        "Lucrari de igienizare fatade si inlaturare efecte coroziune",
-                        "Verificare sisteme de fixare fatade (integral)",
-                        "Hidro + termo izolate fatade"
+                        { name: "Inspectie vizuala fatade (integral)" },
+                        { name: "Lucrari de reparatie fisuri" },
+                        { name: "Lucrari de vopsitorie fatade" },
+                        { name: "Lucrari de igienizare fatade si inlaturare efecte coroziune" },
+                        { name: "Verificare sisteme de fixare fatade (integral)" },
+                        { name: "Hidro + termo izolate fatade" }
                     ],
                     frequency: "aprilie, iunie, august, octombrie"
                 },
                 "socluri_si_trotuare_de_garda": {
                     name: "Socluri si trotuare de garda",
                     checks: [
-                        "Inspectie vizuala trotuare de garda (integral)",
-                        "Reparatii trotuare de garda",
-                        "Lucrari de refacere etanseitate si reparatii fisuri locale"
+                        { name: "Inspectie vizuala trotuare de garda (integral)" },
+                        { name: "Reparatii trotuare de garda" },
+                        { name: "Lucrari de refacere etanseitate si reparatii fisuri locale" }
                     ],
                     frequency: "aprilie, iunie, august, octombrie"
                 },
                 "usi_ferestre": {
                     name: "Usi si ferestre",
                     checks: [
-                        "Verificari si reparatii sisteme inchidere usi (balamale, cremone, silduri, broasca, butuc, manere)",
-                        "Verificari si reparatii feronerie ferestre PVC (sticla, feronerie, garnituri, manere)",
-                        "Usi duble acces aluminiu",
-                        "Usi metalice",
-                        "Usi PVC",
-                        "Usi Pal/MDF",
-                        "Usi HPL-GS",
-                        "Manere usi acces",
-                        "Jaluzele (sistem sina, lamele, inchideri)",
-                        "Reglaje, verificari si reparatii amortizoare de usa",
-                        "Verificari si reparatii garnituri de usa"
+                        { name: "Verificari si reparatii sisteme inchidere usi (balamale, cremone, silduri, broasca, butuc, manere)" },
+                        { name: "Verificari si reparatii feronerie ferestre PVC (sticla, feronerie, garnituri, manere)" },
+                        { name: "Usi duble acces aluminiu" },
+                        { name: "Usi metalice" },
+                        { name: "Usi PVC" },
+                        { name: "Usi Pal/MDF" },
+                        { name: "Usi HPL-GS" },
+                        { name: "Manere usi acces" },
+                        { name: "Jaluzele (sistem sina, lamele, inchideri)" },
+                        { name: "Reglaje, verificari si reparatii amortizoare de usa" },
+                        { name: "Verificari si reparatii garnituri de usa" }
                     ],
                     frequency: "februarie, mai, august, noiembrie"
                 },
                 "iluminat": {
                     name: "Iluminat",
                     checks: [
-                        "Verificare corp de iluminat cu tub",
-                        "Verificare corp de iluminat LED",
-                        "Verificare corp emergenta",
-                        "Verificare functionare corpuri de iluminat si inlocuire corpuri defecte",
-                        "Verificare iluminat de siguranta"
+                        { name: "Verificare corp de iluminat cu tub" },
+                        { name: "Verificare corp de iluminat LED" },
+                        { name: "Verificare corp emergenta" },
+                        { name: "Verificare functionare corpuri de iluminat si inlocuire corpuri defecte" },
+                        { name: "Verificare iluminat de siguranta" }
                     ],
                     frequency: "lunar"
                 },
                 "pardoseli": {
                     name: "Pardoseli",
                     checks: [
-                        "Intretinere si reparare gresie la GS",
-                        "Intretinere si reparare mozaic holuri",
-                        "Intretinere si reparare pardoseli rasina epoxidica",
-                        "Intretinere si reparare pardoseli PVC",
-                        "Intretinere si reparare plinta perimetrala"
+                        { name: "Intretinere si reparare gresie la GS" },
+                        { name: "Intretinere si reparare mozaic holuri" },
+                        { name: "Intretinere si reparare pardoseli rasina epoxidica" },
+                        { name: "Intretinere si reparare pardoseli PVC" },
+                        { name: "Intretinere si reparare plinta perimetrala" }
                     ],
-                    frequency: "ianuarie, martie, iulie, octombire"
+                    frequency: "ianuarie, martie, iulie, octombrie"
                 },
                 "pereti_interiori_si_tavane": {
                     name: "Pereti interiori si tavane",
                     checks: [
-                        "Remedieri infiltratii locale",
-                        "Ghene si mascari coloane",
-                        "Guri de vizitare",
-                        "Plinte, paturi si canal cablu metalice si PVC",
-                        "Intretinere si vopsitorii accesorii hidranti, panouri, balustrade",
-                        "Reparatii tencuieli si glet",
-                        "Zugraveala (amorsa si  lavabila)"
+                        { name: "Remedieri infiltratii locale" },
+                        { name: "Ghene si mascari coloane" },
+                        { name: "Guri de vizitare" },
+                        { name: "Plinte, paturi si canal cablu metalice si PVC" },
+                        { name: "Intretinere si vopsitorii accesorii hidranti, panouri, balustrade" },
+                        { name: "Reparatii tencuieli si glet" },
+                        { name: "Zugraveala (amorsa si lavabila)" }
                     ],
                     frequency: "lunar"
                 },
                 "instalatii_sanitare": {
                     name: "Instalatii sanitare si accesorii",
                     checks: [
-                        "Verificare elemente de inchidere si comanda instalatii sanitare (baterii, robineti)",
-                        "Verificari instalatii canal",
-                        "Mentenanta ventiloconvectoare si instalatii aferente",
-                        "Verificare instalatie alimentare apa rece / calda (GS, chicineta, laborator)",
-                        "Verificare accesorii (dispensere, oglinzi, suporti, perii)",
-                        "Verificare spalator inox",
-                        "Verificare pisoare",
-                        "Verificare baterii actionare mecanica/fotocelula",
-                        "Verificare vase WC standard / Back To Wall",
-                        "Verificare bazine ingropate / semi inaltime",
-                        "Verificare ansamblu ventilatie laboratoare",
-                        "Verificare Sifoane pardoseli",
-                        "Verificare baterii dusuri",
-                        "Inspectii video si desfundare cu jet de apa",
-                        "Verificari robineti lavoare"
+                        { name: "Verificare elemente de inchidere si comanda instalatii sanitare (baterii, robineti)" },
+                        { name: "Verificari instalatii canal" },
+                        { name: "Mentenanta ventiloconvectoare si instalatii aferente" },
+                        { name: "Verificare instalatie alimentare apa rece / calda (GS, chicineta, laborator)" },
+                        { name: "Verificare accesorii (dispensere, oglinzi, suporti, perii)" },
+                        { name: "Verificare spalator inox" },
+                        { name: "Verificare pisoare" },
+                        { name: "Verificare baterii actionare mecanica/fotocelula" },
+                        { name: "Verificare vase WC standard / Back To Wall" },
+                        { name: "Verificare bazine ingropate / semi inaltime" },
+                        { name: "Verificare ansamblu ventilatie laboratoare" },
+                        { name: "Verificare Sifoane pardoseli" },
+                        { name: "Verificare baterii dusuri" },
+                        { name: "Inspectii video si desfundare cu jet de apa" },
+                        { name: "Verificari robineti lavoare" }
                     ],
                     frequency: "lunar"
                 }
@@ -222,124 +222,123 @@ const data = {
                 "acoperisuri_terase": {
                     name: "Acoperisuri si terase",
                     checks: [
-                        "Inspectie vizuala hidroizolatii",
-                        "Mici reparatii si interventii remediere hidroizolatie",
-                        "Inspectie parafrunzare si curatare jgheaburi si burlane",
-                        "Verificare sistem fixare suporti existenti pe acoperisuri",
-                        "Curatat manual si/sau mecanizat terase",
-                        "Verificare fixare atice si lucrari de fixare locala si etanseitate",
-                        "Inlaturare gheata si/sau zapada de pe acoperis in zone cu risc de prabusire si risc infiltratie (pe perioada rece cand exista pericol de accidentare)"
+                        { name: "Inspectie vizuala hidroizolatii" },
+                        { name: "Mici reparatii si interventii remediere hidroizolatie" },
+                        { name: "Inspectie parafrunzare si curatare jgheaburi si burlane" },
+                        { name: "Verificare sistem fixare suporti existenti pe acoperisuri" },
+                        { name: "Curatat manual si/sau mecanizat terase" },
+                        { name: "Verificare fixare atice si lucrari de fixare locala si etanseitate" },
+                        { name: "Inlaturare gheata si/sau zapada de pe acoperis in zone cu risc de prabusire si risc infiltratie (pe perioada rece cand exista pericol de accidentare)" }
                     ],
                     frequency: "martie, septembrie"
                 },
                 "fatade": {
                     name: "Fatade",
-                    checks: [
-                        "Inspectie vizuala fatade (integral)",
-                        "Lucrari de reparatie fisuri",
-                        "Lucrari de vopsitorie fatade",
-                        "Lucrari de igienizare fatade si inlaturare efecte coroziune",
-                        "Verificare sisteme de fixare fatade (integral)",
-                        "Hidro + termo izolatie fatade"
+                    checks: [   
+                        { name: "Inspectie vizuala fatade (integral)" },
+                        { name: "Lucrari de reparatie fisuri" },
+                        { name: "Lucrari de vopsitorie fatade" },
+                        { name: "Lucrari de igienizare fatade si inlaturare efecte coroziune" },
+                        { name: "Verificare sisteme de fixare fatade (integral)" },
+                        { name: "Hidro + termo izolatie fatade" }
                     ],
                     frequency: "aprilie, iunie, august, octombrie"
                 },
                 "socluri_trotuare": {
                     name: "Socluri si trotuare de garda",
                     checks: [
-                        "Inspectie vizuala trotuare de garda (integral)",
-                        "Reparatii trotuare de garda",
-                        "Lucrari de reface etanseitate si reparatii fisuri locale"
+                        { name: "Inspectie vizuala trotuare de garda (integral)" },
+                        { name: "Reparatii trotuare de garda" },
+                        { name: "Lucrari de reface etanseitate si reparatii fisuri locale" }
                     ],
                     frequency: "aprilie, iunie, august, octombrie"
                 },
                 "usi_ferestre": {
                     name: "Usi si ferestre",
                     checks: [
-                        "Verificari si reparatii sisteme inchidere usi (balamale, cremoane, silduri, broasca, butuc, manere)",
-                        "Verificari si reparatii feronerie ferestre PVC (sticla, feronerie, garnituri, manere)",
-                        "Usi duble acces aluminiu",
-                        "Usi metalice",
-                        "Usi PVC",
-                        "Usi Pal/MDF",
-                        "Usi HPL-GS",
-                        "Manere usi acces",
-                        "Jaluzele (sistem sina, lamele, inchideri)",
-                        "Reglaje, verificari si reparatii amortizoare de usa",
-                        "Verificari si reparatii garnituri de usa"
+                        { name: "Verificari si reparatii sisteme inchidere usi (balamale, cremoane, silduri, broasca, butuc, manere)" },
+                        { name: "Verificari si reparatii feronerie ferestre PVC (sticla, feronerie, garnituri, manere)" },
+                        { name: "Usi duble acces aluminiu" },
+                        { name: "Usi metalice" },
+                        { name: "Usi PVC" },
+                        { name: "Usi HPL-GS" },
+                        { name: "Manere usi acces" },
+                        { name: "Jaluzele (sistem sina, lamele, inchideri)" },
+                        { name: "Reglaje, verificari si reparatii amortizoare de usa" },
+                        { name: "Verificari si reparatii garnituri de usa" }
                     ],
                     frequency: "februarie, mai, august, noiembrie"
                 },
                 "instalatii_sanitare": {
                     name: "Instalatii sanitare si accesorii",
                     checks: [
-                        "Verificare elemente de inchidere si comanda instalatii sanitare (baterii, robineti)",
-                        "Verificari instalatii canal",
-                        "Mentenanta ventiloconvectoare si instalatii aferente",
-                        "Verificare instalatie alimentare apa rece / calda (GS, chicineta, laborator)",
-                        "Verificare accesorii (dispensere, oglinzi, suporti, perii)",
-                        "Verificare spalator inox",
-                        "Verificare pisoare",
-                        "Verificare baterii actionare mecanica/fotocelula",
-                        "Verificare vase WC standard / Back To Wall",
-                        "Verificare bazine ingropate / semi inaltime",
-                        "Verificare ansamblu ventilatie laboratoare",
-                        "Verificare Sifoane pardoseli",
-                        "Verificare baterii dusuri",
-                        "Inspectii video si desfundare cu jet de apa",
-                        "Verificari robineti lavoare"
+                        { name: "Verificare elemente de inchidere si comanda instalatii sanitare (baterii, robineti)" },
+                        { name: "Verificari instalatii canal" },
+                        { name: "Mentenanta ventiloconvectoare si instalatii aferente" },
+                        { name: "Verificare instalatie alimentare apa rece / calda (GS, chicineta, laborator)" },
+                        { name: "Verificare accesorii (dispensere, oglinzi, suporti, perii)" },
+                        { name: "Verificare spalator inox" },
+                        { name: "Verificare pisoare" },
+                        { name: "Verificare baterii actionare mecanica/fotocelula" },
+                        { name: "Verificare vase WC standard / Back To Wall" },
+                        { name: "Verificare bazine ingropate / semi inaltime" },
+                        { name: "Verificare ansamblu ventilatie laboratoare" },
+                        { name: "Verificare Sifoane pardoseli" },
+                        { name: "Verificare baterii dusuri" },
+                        { name: "Inspectii video si desfundare cu jet de apa" },
+                        { name: "Verificari robineti lavoare" }
                     ],
                     frequency: "lunar"
                 },
                 "instalatii_electrice": {
                     name: "Instalatii electrice interioare",
                     checks: [
-                        "Verificare impamantare tablouri electrice interioare",
-                        "Verificare Intrerupatoare bipolare",
-                        "Verificare tablou electric metalic",
-                        "Verificare tablou electric fibra/plastic",
-                        "Verificare priza termocupla 380V",
-                        "Verificare intrerupator automat cu diferential",
-                        "Verificare intrerupator automat simplu",
-                        "Verificare Intrerupator simplu iluminat",
-                        "Verificare intrerupator dublu iluminat",
-                        "Verificare prize simple",
-                        "Verificare prize duble",
-                        "Verificare corp de iluminat cu tub",
-                        "Verificare corp de iluminat cu LED",
-                        "Verificare corp emergenta",
-                        "Verificare priza dubla internet",
-                        "Verificare Rack IT",
-                        "Verificare tablou AAR",
-                        "Verificare instalatii de iluminat de evacuare",
-                        "Verificare functionare corpuri de iluminat si inlocuire corpuri defecte",
-                        "Verificare functionare prize si inlocuire prize defecte"
+                        { name: "Verificare impamantare tablouri electrice interioare" },
+                        { name: "Verificare Intrerupatoare bipolare" },
+                        { name: "Verificare tablou electric metalic" },
+                        { name: "Verificare tablou electric fibra/plastic" },
+                        { name: "Verificare priza termocupla 380V" },
+                        { name: "Verificare intrerupator automat cu diferential" },
+                        { name: "Verificare intrerupator automat simplu" },
+                        { name: "Verificare Intrerupator simplu iluminat" },
+                        { name: "Verificare intrerupator dublu iluminat" },
+                        { name: "Verificare prize simple" },
+                        { name: "Verificare prize duble" },
+                        { name: "Verificare corp de iluminat cu tub" },
+                        { name: "Verificare corp de iluminat cu LED" },
+                        { name: "Verificare corp emergenta" },
+                        { name: "Verificare priza dubla internet" },
+                        { name: "Verificare Rack IT" },
+                        { name: "Verificare tablou AAR" },
+                        { name: "Verificare instalatii de iluminat de evacuare" },
+                        { name: "Verificare functionare corpuri de iluminat si inlocuire corpuri defecte" },
+                        { name: "Verificare functionare prize si inlocuire prize defecte" }
                     ],
                     frequency: "lunar"
                 },
                 "pardoseli": {
                     name: "Pardoseli",
                     checks: [
-                        "Intretinere si reparare gresie la GS",
-                        "Intretinere si reparare mozaic holuri",
-                        "Intretinere si reparare pardoseli rasina epoxidica",
-                        "Intretinere si reparare pardoseli PVC",
-                        "Intretinere si reparare plinta perimetrala"
+                        { name: "Intretinere si reparare gresie la GS" },
+                        { name: "Intretinere si reparare mozaic holuri" },
+                        { name: "Intretinere si reparare pardoseli rasina epoxidica" },
+                        { name: "Intretinere si reparare pardoseli PVC" },
+                        { name: "Intretinere si reparare plinta perimetrala" }
                     ],
                     frequency: "ianuarie, martie, iulie, octombrie"
                 },
                 "pereti_tavane": {
                     name: "Pereti interiori si tavane",
                     checks: [
-                        "Tavan casetat",
-                        "Remedieri infiltratii locale",
-                        "Ghene si mascari coloane",
-                        "Guri de vizitare",
-                        "Faianta",
-                        "Plinte, paturi si canal cablu metalice si PVC",
-                        "Intretinere si vopsitorii accesorii hidranti, panouri, balustrade",
-                        "Reparatii tencuieli si glet",
-                        "Zugraveala (amorsa si lavabila)"
+                        { name: "Tavan casetat" },
+                        { name: "Remedieri infiltratii locale" },
+                        { name: "Ghene si mascari coloane" },
+                        { name: "Guri de vizitare" },
+                        { name: "Faianta" },
+                        { name: "Plinte, paturi si canal cablu metalice si PVC" },
+                        { name: "Intretinere si vopsitorii accesorii hidranti, panouri, balustrade" },
+                        { name: "Reparatii tencuieli si glet" },
+                        { name: "Zugraveala (amorsa si lavabila)" }
                     ],
                     frequency: "lunar"
                 }
@@ -600,25 +599,27 @@ function showInspectionChecks(contractId, inspectionTypeId) {
     checksContainer.innerHTML = '';
 
     const contract = data.contracts[contractId];
-    if (!contract || !contract.inspectionTypes) {
-        document.getElementById('generalChecksSection').style.display = 'none';
-        return;
-    }
-
-    const inspectionType = contract.inspectionTypes[inspectionTypeId];
+    const inspectionType = contract?.inspectionTypes?.[inspectionTypeId];
     if (!inspectionType) {
         document.getElementById('generalChecksSection').style.display = 'none';
         return;
     }
 
-    // Adaugam verificarile
     inspectionType.checks.forEach(check => {
+        const checkName = check.name;
         const checkDiv = document.createElement('div');
         checkDiv.className = 'form-check';
+        
+        // Get frequency - use inspection type's frequency if it exists
+        const frequency = inspectionType.frequency || '';
+        const frequencyBadge = frequency 
+            ? `<span class="badge bg-secondary ms-2">${frequency}</span>`
+            : '';
+
         checkDiv.innerHTML = `
-            <input class="form-check-input" type="checkbox" name="generalChecks" id="check_${check.replace(/\s+/g, '_')}" value="${check}">
-            <label class="form-check-label" for="check_${check.replace(/\s+/g, '_')}">
-                ${check}
+            <input class="form-check-input" type="checkbox" name="generalChecks" id="check_${checkName.replace(/\s+/g, '_')}" value="${checkName}">
+            <label class="form-check-label" for="check_${checkName.replace(/\s+/g, '_')}">
+                ${checkName}${frequencyBadge}
             </label>
         `;
         checksContainer.appendChild(checkDiv);
@@ -647,7 +648,7 @@ function initForm() {
     const activityTypeRadios = form.querySelectorAll('input[name="tipActivitate"]');
     if (activityTypeRadios.length) {
         activityTypeRadios.forEach(radio => {
-            radio.addEventListener('change', function() {
+            radio.addEventListener('change', function () {
                 if (this.value === 'inspectie') {
                     // Clear intervention fields when switching to inspection
                     if (form.elements['operatiuniIntreprinse']) form.elements['operatiuniIntreprinse'].value = '';
@@ -757,7 +758,7 @@ function initForm() {
 
         requiredFields.forEach(field => {
             // Debug log for each field being validated
-            
+
             // If the field is not visible, skip it
             if (field.offsetParent === null) return;
             // For checkboxes/radios, check if any in the group is checked
@@ -805,7 +806,7 @@ function initForm() {
         const inspectionTypeId = form.elements['tipInspectie']?.value;
         let fazaValue = '';
         let frecventaValue = '';
-        
+
         if (contractId && data.contracts[contractId]) {
             const contract = data.contracts[contractId];
             if (contractId === 'caseta') {
@@ -1006,8 +1007,9 @@ function initForm() {
                 resetSection(problemsDetails, problemDescription, technicalSolution, problemMaterials);
                 problemRadios.forEach(r => r.checked = false);
                 workCompletedRadios.forEach(r => r.checked = false);
-            }});
-    
+            }
+        });
+
     });
 
     // 5. Inspection Type Change
