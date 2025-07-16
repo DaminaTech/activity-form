@@ -84,10 +84,10 @@ const data = {
                         { name: '57 Rezervor carburant', faza: 'Faza 1' },
                         { name: '58 Statie de preluare vidanje', faza: 'Faza 2' },
                         { name: '70 Amplasament incinerator de namol', faza: 'Faza 1' },
-                        {name: '00 - cladire chimizare'},
-                        {name:'00 - platforma chimizare'},
-                        {name:'00 - organizare noua Damina'},
-                        {name:'00 - magazie'}
+                        {name: '00 - cladire chimizare', faza: 'Faza 1'},
+                        {name:'00 - platforma chimizare', faza: 'Faza 1'},
+                        {name:'00 - organizare noua Damina', faza: 'Faza 1'},
+                        {name:'00 - magazie', faza: 'Faza 1'}
 
                     ]
 
