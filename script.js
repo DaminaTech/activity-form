@@ -7,6 +7,11 @@ const data = {
                 'glina': {
                     name: 'Glina',
                     buildings: [
+                        {name: '00 - cladire chimizare', faza: 'Faza 1'},
+                        {name:'00 - platforma chimizare', faza: 'Faza 1'},
+                        {name:'00 - organizare noua Damina', faza: 'Faza 1'},
+                        {name:'00 - magazie', faza: 'Faza 1'},
+
                         { name: '1.0 Conexiune la caseta linia 2', faza: 'Faza 1' },
                         { name: '1.1 Statie gratare rare linia 1', faza: 'Faza 1' },
                         { name: '1.2 Statie gratare rare linia 2', faza: 'Faza 2' },
@@ -83,12 +88,8 @@ const data = {
                         { name: '56 Statie alimentare carburant', faza: 'Faza 1' },
                         { name: '57 Rezervor carburant', faza: 'Faza 1' },
                         { name: '58 Statie de preluare vidanje', faza: 'Faza 2' },
-                        { name: '70 Amplasament incinerator de namol', faza: 'Faza 1' },
-                        {name: '00 - cladire chimizare', faza: 'Faza 1'},
-                        {name:'00 - platforma chimizare', faza: 'Faza 1'},
-                        {name:'00 - organizare noua Damina', faza: 'Faza 1'},
-                        {name:'00 - magazie', faza: 'Faza 1'}
-
+                        { name: '70 Amplasament incinerator de namol', faza: 'Faza 1' }
+                        
                     ]
 
 
