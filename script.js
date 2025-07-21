@@ -1412,12 +1412,6 @@ function showInspectionChecks(contractId, inspectionTypeId) {
         const checkDiv = document.createElement("div");
         checkDiv.className = "form-check";
 
-        // Get frequency - use inspection type's frequency if it exists
-        const frequency = inspectionType.frequency || "";
-        const frequencyBadge = frequency
-            ? `<span class="badge bg-secondary ms-2">${frequency}</span>`
-            : "";
-
         checkDiv.innerHTML = `
             <input class="form-check-input" type="checkbox" name="generalChecks" id="check_${checkName.replace(
                 /\s+/g,
@@ -1427,7 +1421,7 @@ function showInspectionChecks(contractId, inspectionTypeId) {
                 /\s+/g,
                 "_"
             )}">
-                ${checkName}${frequencyBadge}
+                ${checkName}
             </label>
         `;
         checksContainer.appendChild(checkDiv);
@@ -2018,21 +2012,14 @@ function initForm() {
                 const checkId = `check_${inspectionTypeId}_${index}`;
                 checksContainer.innerHTML += `
                     <div class="form-check mb-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <input class="form-check-input" type="checkbox" name="verificari" 
-                                       id="${checkId}" value="${checkObj.name.replace(
+                        <input class="form-check-input" type="checkbox" name="verificari" 
+                               id="${checkId}" value="${checkObj.name.replace(
                     /"/g,
                     "&quot;"
                 )}">
-                                <label class="form-check-label" for="${checkId}">
-                                    ${checkObj.name}
-                                </label>
-                            </div>
-                            <span class="badge bg-secondary">${
-                                checkObj.frequency
-                            }</span>
-                        </div>
+                        <label class="form-check-label" for="${checkId}">
+                            ${checkObj.name}
+                        </label>
                     </div>`;
             });
             generalChecksSection.style.display = "block";
@@ -2053,21 +2040,14 @@ function initForm() {
                 const checkId = `check_${inspectionTypeId}_${index}`;
                 checksContainer.innerHTML += `
                     <div class="form-check mb-2">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div>
-                                <input class="form-check-input" type="checkbox" name="verificari" 
-                                       id="${checkId}" value="${checkObj.name.replace(
+                        <input class="form-check-input" type="checkbox" name="verificari" 
+                               id="${checkId}" value="${checkObj.name.replace(
                     /"/g,
                     "&quot;"
                 )}">
-                                <label class="form-check-label" for="${checkId}">
-                                    ${checkObj.name}
-                                </label>
-                            </div>
-                            <span class="badge bg-secondary">${
-                                checkObj.frequency
-                            }</span>
-                        </div>
+                        <label class="form-check-label" for="${checkId}">
+                            ${checkObj.name}
+                        </label>
                     </div>`;
             });
             generalChecksSection.style.display = "block";
