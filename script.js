@@ -1139,6 +1139,64 @@ const WEBHOOKS = {
 // Environment management
 let isTestMode = false;
 
+// Loading state management
+function showLoading() {
+    // Update button state
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('submitBtnText');
+    const btnLoader = document.getElementById('submitBtnLoader');
+    
+    if (submitBtn && btnText && btnLoader) {
+        submitBtn.disabled = true;
+        btnText.classList.add('d-none');
+        btnLoader.classList.remove('d-none');
+    }
+    
+    // Create and show overlay
+    const overlay = document.createElement('div');
+    overlay.id = 'loadingOverlay';
+    overlay.className = 'form-loading-overlay';
+    
+    const loadingContent = document.createElement('div');
+    loadingContent.className = 'loading-content';
+    
+    loadingContent.innerHTML = `
+        <div class="spinner-border text-primary loading-spinner" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+        <div class="loading-text">Se trimite raportul...</div>
+        <div class="loading-subtext">${isTestMode ? 'Folosind webhook de test' : 'Conectare la server'}</div>
+    `;
+    
+    overlay.appendChild(loadingContent);
+    document.body.appendChild(overlay);
+    
+    // Prevent scrolling while loading
+    document.body.style.overflow = 'hidden';
+}
+
+function hideLoading() {
+    // Reset button state
+    const submitBtn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('submitBtnText');
+    const btnLoader = document.getElementById('submitBtnLoader');
+    
+    if (submitBtn && btnText && btnLoader) {
+        submitBtn.disabled = false;
+        btnText.classList.remove('d-none');
+        btnLoader.classList.add('d-none');
+    }
+    
+    // Remove overlay
+    const overlay = document.getElementById('loadingOverlay');
+    if (overlay) {
+        overlay.remove();
+    }
+    
+    // Restore scrolling
+    document.body.style.overflow = '';
+}
+
 function getWebhookURL() {
     return isTestMode ? WEBHOOKS.test : WEBHOOKS.production;
 }
@@ -1716,8 +1774,14 @@ function initForm() {
         }
 
         try {
+            // Show loading state
+            showLoading();
+            
             await submitToN8N(formData);
-            alert("Felicitari!");
+            
+            // Hide loading and show success
+            hideLoading();
+            alert("Felicitari! Raportul a fost trimis cu succes.");
             setTimeout(() => window.location.reload(), 0);
             // form.reset();
             document
@@ -1726,6 +1790,8 @@ function initForm() {
             if (typeof photoPreview !== "undefined")
                 photoPreview.innerHTML = "";
         } catch (error) {
+            // Hide loading and show error
+            hideLoading();
             console.error("Submission failed:", error);
             alert(
                 "Eroare la trimiterea formularului. Verificați consola pentru detalii."
@@ -2034,8 +2100,52 @@ function initForm() {
         });
     });
 
-    // --- Photo Upload Logic ---
-    function handleFiles(files) {
+    // --- Photo Upload Logic with Compression ---
+    
+    // Image compression function
+    function compressImage(file, maxWidth = 1920, maxHeight = 1080, quality = 0.8) {
+        return new Promise((resolve) => {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+            
+            img.onload = () => {
+                // Calculate new dimensions
+                let { width, height } = img;
+                
+                if (width > height) {
+                    if (width > maxWidth) {
+                        height = (height * maxWidth) / width;
+                        width = maxWidth;
+                    }
+                } else {
+                    if (height > maxHeight) {
+                        width = (width * maxHeight) / height;
+                        height = maxHeight;
+                    }
+                }
+                
+                canvas.width = width;
+                canvas.height = height;
+                
+                // Draw and compress
+                ctx.drawImage(img, 0, 0, width, height);
+                
+                canvas.toBlob((blob) => {
+                    // Create new file with compressed data
+                    const compressedFile = new File([blob], file.name, {
+                        type: 'image/jpeg',
+                        lastModified: Date.now()
+                    });
+                    resolve(compressedFile);
+                }, 'image/jpeg', quality);
+            };
+            
+            img.src = URL.createObjectURL(file);
+        });
+    }
+    
+    async function handleFiles(files) {
         // Only keep the first 6 files if more are selected
         const filesToProcess = Array.from(files).slice(0, 6);
 
@@ -2044,39 +2154,111 @@ function initForm() {
             photoPreview.innerHTML = "";
         }
 
-        filesToProcess.forEach((file, index) => {
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                const container = document.createElement("div");
-                container.className = "preview-image-container";
+        // Show compression message if files are large
+        const hasLargeFiles = filesToProcess.some(file => file.size > 2 * 1024 * 1024); // 2MB
+        if (hasLargeFiles) {
+            const compressionMsg = document.createElement('div');
+            compressionMsg.className = 'alert alert-info';
+            compressionMsg.innerHTML = '<small>📷 Optimizing large images...</small>';
+            photoPreview.appendChild(compressionMsg);
+        }
 
-                const img = document.createElement("img");
-                img.src = e.target.result;
-                img.className = "preview-image";
-                img.alt = `Preview ${index + 1}`;
+        const processedFiles = [];
+        
+        for (let i = 0; i < filesToProcess.length; i++) {
+            const file = filesToProcess[i];
+            
+            // Validate file type
+            if (!file.type.startsWith('image/')) {
+                alert(`${file.name} nu este o imagine validă.`);
+                continue;
+            }
+            
+            // Check original file size (warn if very large)
+            if (file.size > 10 * 1024 * 1024) { // 10MB
+                const proceed = confirm(`${file.name} este foarte mare (${formatFileSize(file.size)}). Dorești să continui? Imaginea va fi optimizată automat.`);
+                if (!proceed) continue;
+            }
+            
+            try {
+                // Compress image if it's large or not already JPEG
+                let processedFile = file;
+                if (file.size > 1024 * 1024 || !file.type.includes('jpeg')) { // 1MB threshold
+                    processedFile = await compressImage(file);
+                }
+                
+                processedFiles.push(processedFile);
+                
+                // Create preview
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const container = document.createElement("div");
+                    container.className = "preview-image-container";
 
-                const removeBtn = document.createElement("button");
-                removeBtn.className = "remove-image";
-                removeBtn.innerHTML = "×";
-                removeBtn.title = "Remove image";
-                removeBtn.onclick = (e) => {
-                    e.stopPropagation();
-                    container.remove();
+                    const img = document.createElement("img");
+                    img.src = e.target.result;
+                    img.className = "preview-image";
+                    img.alt = `Preview ${i + 1}`;
+
+                    const removeBtn = document.createElement("button");
+                    removeBtn.className = "remove-image";
+                    removeBtn.innerHTML = "×";
+                    removeBtn.title = "Remove image";
+                    removeBtn.onclick = (e) => {
+                        e.stopPropagation();
+                        container.remove();
+                        // Remove from processed files
+                        const index = processedFiles.indexOf(processedFile);
+                        if (index > -1) processedFiles.splice(index, 1);
+                        updateFileInput(processedFiles);
+                    };
+
+                    const fileInfo = document.createElement("div");
+                    fileInfo.className = "file-info";
+                    
+                    // Show compression savings if file was compressed
+                    if (processedFile.size < file.size) {
+                        const savings = ((file.size - processedFile.size) / file.size * 100).toFixed(1);
+                        fileInfo.innerHTML = `${file.name}<br><small>Optimizat: ${formatFileSize(processedFile.size)} (-${savings}%)</small>`;
+                    } else {
+                        fileInfo.textContent = `${file.name} (${formatFileSize(processedFile.size)})`;
+                    }
+
+                    container.appendChild(img);
+                    container.appendChild(removeBtn);
+                    container.appendChild(fileInfo);
+                    
+                    // Remove compression message if it exists
+                    const compressionMsg = photoPreview.querySelector('.alert-info');
+                    if (compressionMsg) compressionMsg.remove();
+                    
+                    photoPreview.appendChild(container);
                 };
-
-                const fileInfo = document.createElement("div");
-                fileInfo.className = "file-info";
-                fileInfo.textContent = `${file.name} (${formatFileSize(
-                    file.size
-                )})`;
-
-                container.appendChild(img);
-                container.appendChild(removeBtn);
-                container.appendChild(fileInfo);
-                photoPreview.appendChild(container);
-            };
-            reader.readAsDataURL(file);
-        });
+                reader.readAsDataURL(processedFile);
+                
+            } catch (error) {
+                console.error('Error processing image:', error);
+                alert(`Eroare la procesarea imaginii ${file.name}`);
+            }
+        }
+        
+        // Update the file input with processed files
+        updateFileInput(processedFiles);
+    }
+    
+    // Helper function to update file input with processed files
+    function updateFileInput(files) {
+        const dataTransfer = new DataTransfer();
+        files.forEach(file => dataTransfer.items.add(file));
+        photoUpload.files = dataTransfer.files;
+        
+        // Update file count
+        const fileCount = document.getElementById("file-count");
+        if (fileCount) {
+            const totalSize = files.reduce((sum, file) => sum + file.size, 0);
+            fileCount.innerHTML = files.length > 0 ? 
+                `${files.length} fișiere (${formatFileSize(totalSize)} total)` : '';
+        }
     }
 
     // Helper function to format file size
@@ -2089,15 +2271,9 @@ function initForm() {
     }
 
     // Handle file input change
-    photoUpload.addEventListener("change", () => {
+    photoUpload.addEventListener("change", async () => {
         if (photoUpload.files.length > 0) {
-            handleFiles(photoUpload.files);
-
-            // Update the file count display
-            const fileCount = document.getElementById("file-count");
-            if (fileCount) {
-                fileCount.textContent = `${photoUpload.files.length} fișiere selectate`;
-            }
+            await handleFiles(photoUpload.files);
         }
     });
 
