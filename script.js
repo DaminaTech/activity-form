@@ -1222,13 +1222,60 @@ function fillTestData() {
 
                 // Set activity type after building is selected
                 setTimeout(() => {
-                    const activityType =
-                        document.getElementById("activityInspection");
+                    const activityType = document.getElementById("activityInspection");
                     activityType.checked = true;
                     activityType.dispatchEvent(new Event("change"));
 
                     // Set zone
                     document.getElementById("zoneInput").value = "Zona Test A";
+
+                    // Wait for inspection type to populate, then select one
+                    setTimeout(() => {
+                        const inspectionTypeSelect = document.getElementById("inspectionTypeSelect");
+                        if (inspectionTypeSelect.options.length > 1) {
+                            inspectionTypeSelect.selectedIndex = 1; // Select first inspection type
+                            inspectionTypeSelect.dispatchEvent(new Event("change"));
+
+                            // Wait for checks to populate, then select some
+                            setTimeout(() => {
+                                const checkboxes = document.querySelectorAll('#checksContainer input[type="checkbox"]');
+                                if (checkboxes.length > 0) {
+                                    // Select first 2-3 checkboxes
+                                    for (let i = 0; i < Math.min(3, checkboxes.length); i++) {
+                                        checkboxes[i].checked = true;
+                                    }
+                                }
+
+                                // Set problems to "da" and fill problem fields
+                                const problemsYes = document.getElementById("problemsYes");
+                                if (problemsYes) {
+                                    problemsYes.checked = true;
+                                    problemsYes.dispatchEvent(new Event("change"));
+
+                                    // Wait for problem fields to show, then fill them
+                                    setTimeout(() => {
+                                        const problemDescription = document.getElementById("problemDescription");
+                                        const technicalSolution = document.getElementById("technicalSolution");
+                                        const problemMaterials = document.getElementById("problemMaterials");
+                                        const workCompletedYes = document.getElementById("workCompletedYes");
+
+                                        if (problemDescription) {
+                                            problemDescription.value = "Fisuri minore observate pe partea de est a structurii. Necesită intervenție preventivă.";
+                                        }
+                                        if (technicalSolution) {
+                                            technicalSolution.value = "Aplicare material sigilant pe fisurile identificate. Monitorizare periodică pentru evitarea extinderii.";
+                                        }
+                                        if (problemMaterials) {
+                                            problemMaterials.value = "Material sigilant flexibil, pensule pentru aplicare, echipament de protecție individuală.";
+                                        }
+                                        if (workCompletedYes) {
+                                            workCompletedYes.checked = true;
+                                        }
+                                    }, 100);
+                                }
+                            }, 200);
+                        }
+                    }, 200);
                 }, 100);
             }
         }, 200);
