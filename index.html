@@ -9,7 +9,20 @@
 </head>
 <body>
     <div class="container my-5">
+        <!-- Test Mode Banner -->
+        <div id="testModeBanner" class="alert alert-warning text-center mb-3" style="display: none;">
+            <strong>🧪 MOD TEST</strong> - Datele vor fi trimise către webhook-ul de test
+        </div>
+        
         <div class="form-container">
+            <!-- Environment Toggle -->
+            <div class="d-flex justify-content-end mb-3">
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="testModeToggle" title="Activează modul test">
+                    <label class="form-check-label text-muted small" for="testModeToggle">Mod Test</label>
+                </div>
+            </div>
+            
             <h1 class="form-title">Formular Activitate Zilnică</h1>
             <p class="form-subtitle text-center mb-4">Completați detaliile de mai jos.</p>
 

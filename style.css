@@ -347,3 +347,35 @@ body {
 .hidden-section {
     display: none;
 }
+
+/* Test Mode Styling */
+#testModeBanner {
+    border-left: 4px solid #ff9800;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Test mode toggle styling */
+#testModeToggle:checked {
+    background-color: #ff9800;
+    border-color: #ff9800;
+}
+
+#testModeToggle:checked:focus {
+    box-shadow: 0 0 0 0.25rem rgba(255, 152, 0, 0.25);
+}
+
+/* Subtle background change in test mode - applied via JavaScript */
+body.test-mode {
+    background-color: #fff8e1 !important;
+}
