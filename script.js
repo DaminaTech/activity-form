@@ -1792,10 +1792,12 @@ function initForm() {
             
             await submitToN8N(formData);
             
-            // Hide loading and show success
+            // Hide loading and show success after a brief delay
             hideLoading();
-            alert("Felicitari! Raportul a fost trimis cu succes.");
-            setTimeout(() => window.location.reload(), 0);
+            setTimeout(() => {
+                alert("Felicitari! Raportul a fost trimis cu succes.");
+                setTimeout(() => window.location.reload(), 0);
+            }, 100);
             // form.reset();
             document
                 .querySelectorAll(".hidden-section")
@@ -1803,12 +1805,14 @@ function initForm() {
             if (typeof photoPreview !== "undefined")
                 photoPreview.innerHTML = "";
         } catch (error) {
-            // Hide loading and show error
+            // Hide loading and show error after a brief delay
             hideLoading();
-            console.error("Submission failed:", error);
-            alert(
-                "Eroare la trimiterea formularului. Verificați consola pentru detalii."
-            );
+            setTimeout(() => {
+                console.error("Submission failed:", error);
+                alert(
+                    "Eroare la trimiterea formularului. Verificați consola pentru detalii."
+                );
+            }, 100);
         }
     });
 
