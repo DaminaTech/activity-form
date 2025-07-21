@@ -1136,6 +1136,17 @@ const WEBHOOKS = {
     test: "https://daminatech.app.n8n.cloud/webhook/4deec761-6c95-4c55-96bb-fc51b85cbdac", // Înlocuiește cu URL-ul webhook de test
 };
 
+// Constants for repeated strings
+const CSS_CLASSES = {
+    INVALID: 'is-invalid',
+    INVALID_FEEDBACK: 'invalid-feedback',
+    HIDDEN_SECTION: 'hidden-section'
+};
+
+// Utility functions for DOM manipulation
+const showElement = (element) => { if (element) element.style.display = "block"; };
+const hideElement = (element) => { if (element) element.style.display = "none"; };
+
 // Environment management
 let isTestMode = false;
 
@@ -1543,12 +1554,12 @@ function initForm() {
             formData.set("dataActivitate", dateStr + "T12:00:00");
         }
         // Remove previous validation state
-        form.querySelectorAll(".is-invalid").forEach((el) =>
-            el.classList.remove("is-invalid")
+        form.querySelectorAll(`.${CSS_CLASSES.INVALID}`).forEach((el) =>
+            el.classList.remove(CSS_CLASSES.INVALID)
         );
         // Hide all invalid-feedback
-        form.querySelectorAll(".invalid-feedback").forEach(
-            (el) => (el.style.display = "none")
+        form.querySelectorAll(`.${CSS_CLASSES.INVALID_FEEDBACK}`).forEach(
+            (el) => hideElement(el)
         );
 
         // Find all required and visible fields
@@ -1621,27 +1632,27 @@ function initForm() {
                     field.value === "" ||
                     field.options[field.selectedIndex].disabled
                 ) {
-                    field.classList.add("is-invalid");
+                    field.classList.add(CSS_CLASSES.INVALID);
                     if (
                         feedback &&
-                        feedback.classList.contains("invalid-feedback")
+                        feedback.classList.contains(CSS_CLASSES.INVALID_FEEDBACK)
                     ) {
-                        feedback.style.display = "block";
+                        showElement(feedback);
                     }
                     if (!firstInvalid) firstInvalid = field;
                     valid = false;
                 } else {
                     // If valid, remove error state
-                    field.classList.remove("is-invalid");
+                    field.classList.remove(CSS_CLASSES.INVALID);
                     if (
                         feedback &&
-                        feedback.classList.contains("invalid-feedback")
+                        feedback.classList.contains(CSS_CLASSES.INVALID_FEEDBACK)
                     ) {
-                        feedback.style.display = "none";
+                        hideElement(feedback);
                     }
                 }
             } else if (!field.value) {
-                field.classList.add("is-invalid");
+                field.classList.add(CSS_CLASSES.INVALID);
                 if (!firstInvalid) firstInvalid = field;
                 valid = false;
             }

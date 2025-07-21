@@ -118,11 +118,6 @@ body {
     margin-bottom: 0.5rem;
 }
 
-.form-label.required::after {
-    content: ' *';
-    color: var(--danger-color);
-}
-
 .form-control, .form-select {
     border-radius: 8px;
     border: 1px solid var(--border-color);
