@@ -1215,12 +1215,16 @@ function getWebhookURL() {
 function toggleTestMode(enabled) {
     isTestMode = enabled;
     const banner = document.getElementById("testModeBanner");
-    const toggle = document.getElementById("testModeToggle");
+    const floatingBtn = document.getElementById("testModeFloatingBtn");
 
     if (enabled) {
         banner.style.display = "block";
         document.body.style.backgroundColor = "#fff8e1";
         document.body.classList.add("test-mode");
+        if (floatingBtn) {
+            floatingBtn.classList.add("active");
+            floatingBtn.title = "Disable Test Mode";
+        }
         console.log(
             "🧪 TEST MODE ENABLED - Using test webhook:",
             WEBHOOKS.test
@@ -1232,6 +1236,10 @@ function toggleTestMode(enabled) {
         banner.style.display = "none";
         document.body.style.backgroundColor = "";
         document.body.classList.remove("test-mode");
+        if (floatingBtn) {
+            floatingBtn.classList.remove("active");
+            floatingBtn.title = "Enable Test Mode";
+        }
         console.log(
             "✅ PRODUCTION MODE - Using production webhook:",
             WEBHOOKS.production
@@ -2137,8 +2145,8 @@ function initForm() {
     }
     
     async function handleFiles(files) {
-        // Only keep the first 6 files if more are selected
-        const filesToProcess = Array.from(files).slice(0, 6);
+        // Only keep the first 20 files if more are selected
+        const filesToProcess = Array.from(files).slice(0, 20);
 
         // Clear existing previews if we're replacing them
         if (filesToProcess.length > 0) {
@@ -2314,15 +2322,19 @@ document.addEventListener("DOMContentLoaded", () => {
         .forEach((radio) => (radio.checked = false));
 
     // Initialize test mode
-    const testModeToggle = document.getElementById("testModeToggle");
     const savedTestMode = localStorage.getItem("testMode") === "true";
+    const floatingBtn = document.getElementById("testModeFloatingBtn");
 
-    testModeToggle.checked = savedTestMode;
+    // Set initial test mode state
     toggleTestMode(savedTestMode);
 
-    testModeToggle.addEventListener("change", (e) => {
-        toggleTestMode(e.target.checked);
-    });
+    // Add click handler for floating button
+    if (floatingBtn) {
+        floatingBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            toggleTestMode(!isTestMode);
+        });
+    }
 
     initForm();
 });

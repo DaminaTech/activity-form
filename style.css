@@ -375,6 +375,59 @@ body.test-mode {
     background-color: #fff8e1 !important;
 }
 
+/* Floating Test Mode Button */
+.test-mode-floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    min-width: 70px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #6c757d;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    padding: 0 12px;
+    letter-spacing: 0.5px;
+}
+
+.test-mode-floating-btn:hover {
+    opacity: 0.8;
+}
+
+.test-mode-floating-btn.active {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    border: 2px solid #ffc107;
+    opacity: 1;
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(255, 193, 7, 0.4);
+    }
+    50% {
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(255, 193, 7, 0.1);
+    }
+}
+
+/* Hide floating button on mobile devices */
+@media (max-width: 768px) {
+    .test-mode-floating-btn {
+        display: none !important;
+    }
+}
+
 /* Loading state for submit button */
 #submitBtn:disabled {
     background-color: #6c757d;
