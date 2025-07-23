@@ -377,6 +377,9 @@ const data = {
                             name: "Verificare functionare corpuri de iluminat si inlocuire corpuri defecte",
                         },
                         { name: "Verificare iluminat de siguranta" },
+                        { name: "Verificare prize" },
+                        { name: "Verificare impamantari" },
+                        { name: "Verificare sisteme pat cablu" },
                     ],
                     frequency: "lunar",
                 },
@@ -1138,14 +1141,18 @@ const WEBHOOKS = {
 
 // Constants for repeated strings
 const CSS_CLASSES = {
-    INVALID: 'is-invalid',
-    INVALID_FEEDBACK: 'invalid-feedback',
-    HIDDEN_SECTION: 'hidden-section'
+    INVALID: "is-invalid",
+    INVALID_FEEDBACK: "invalid-feedback",
+    HIDDEN_SECTION: "hidden-section",
 };
 
 // Utility functions for DOM manipulation
-const showElement = (element) => { if (element) element.style.display = "block"; };
-const hideElement = (element) => { if (element) element.style.display = "none"; };
+const showElement = (element) => {
+    if (element) element.style.display = "block";
+};
+const hideElement = (element) => {
+    if (element) element.style.display = "none";
+};
 
 // Environment management
 let isTestMode = false;
@@ -1153,59 +1160,61 @@ let isTestMode = false;
 // Loading state management
 function showLoading() {
     // Update button state
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('submitBtnText');
-    const btnLoader = document.getElementById('submitBtnLoader');
-    
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = document.getElementById("submitBtnText");
+    const btnLoader = document.getElementById("submitBtnLoader");
+
     if (submitBtn && btnText && btnLoader) {
         submitBtn.disabled = true;
-        btnText.classList.add('d-none');
-        btnLoader.classList.remove('d-none');
+        btnText.classList.add("d-none");
+        btnLoader.classList.remove("d-none");
     }
-    
+
     // Create and show overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'loadingOverlay';
-    overlay.className = 'form-loading-overlay';
-    
-    const loadingContent = document.createElement('div');
-    loadingContent.className = 'loading-content';
-    
+    const overlay = document.createElement("div");
+    overlay.id = "loadingOverlay";
+    overlay.className = "form-loading-overlay";
+
+    const loadingContent = document.createElement("div");
+    loadingContent.className = "loading-content";
+
     loadingContent.innerHTML = `
         <div class="spinner-border text-primary loading-spinner" role="status">
             <span class="visually-hidden">Loading...</span>
         </div>
         <div class="loading-text">Se trimite raportul...</div>
-        <div class="loading-subtext">${isTestMode ? 'Folosind webhook de test' : 'Conectare la server'}</div>
+        <div class="loading-subtext">${
+            isTestMode ? "Folosind webhook de test" : "Conectare la server"
+        }</div>
     `;
-    
+
     overlay.appendChild(loadingContent);
     document.body.appendChild(overlay);
-    
+
     // Prevent scrolling while loading
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 }
 
 function hideLoading() {
     // Reset button state
-    const submitBtn = document.getElementById('submitBtn');
-    const btnText = document.getElementById('submitBtnText');
-    const btnLoader = document.getElementById('submitBtnLoader');
-    
+    const submitBtn = document.getElementById("submitBtn");
+    const btnText = document.getElementById("submitBtnText");
+    const btnLoader = document.getElementById("submitBtnLoader");
+
     if (submitBtn && btnText && btnLoader) {
         submitBtn.disabled = false;
-        btnText.classList.remove('d-none');
-        btnLoader.classList.add('d-none');
+        btnText.classList.remove("d-none");
+        btnLoader.classList.add("d-none");
     }
-    
+
     // Remove overlay
-    const overlay = document.getElementById('loadingOverlay');
+    const overlay = document.getElementById("loadingOverlay");
     if (overlay) {
         overlay.remove();
     }
-    
+
     // Restore scrolling
-    document.body.style.overflow = '';
+    document.body.style.overflow = "";
 }
 
 function getWebhookURL() {
@@ -1299,7 +1308,8 @@ function fillTestData() {
 
                 // Set activity type after building is selected
                 setTimeout(() => {
-                    const activityType = document.getElementById("activityInspection");
+                    const activityType =
+                        document.getElementById("activityInspection");
                     activityType.checked = true;
                     activityType.dispatchEvent(new Event("change"));
 
@@ -1308,42 +1318,70 @@ function fillTestData() {
 
                     // Wait for inspection type to populate, then select one
                     setTimeout(() => {
-                        const inspectionTypeSelect = document.getElementById("inspectionTypeSelect");
+                        const inspectionTypeSelect = document.getElementById(
+                            "inspectionTypeSelect"
+                        );
                         if (inspectionTypeSelect.options.length > 1) {
                             inspectionTypeSelect.selectedIndex = 1; // Select first inspection type
-                            inspectionTypeSelect.dispatchEvent(new Event("change"));
+                            inspectionTypeSelect.dispatchEvent(
+                                new Event("change")
+                            );
 
                             // Wait for checks to populate, then select some
                             setTimeout(() => {
-                                const checkboxes = document.querySelectorAll('#checksContainer input[type="checkbox"]');
+                                const checkboxes = document.querySelectorAll(
+                                    '#checksContainer input[type="checkbox"]'
+                                );
                                 if (checkboxes.length > 0) {
                                     // Select first 2-3 checkboxes
-                                    for (let i = 0; i < Math.min(3, checkboxes.length); i++) {
+                                    for (
+                                        let i = 0;
+                                        i < Math.min(3, checkboxes.length);
+                                        i++
+                                    ) {
                                         checkboxes[i].checked = true;
                                     }
                                 }
 
                                 // Set problems to "da" and fill problem fields
-                                const problemsYes = document.getElementById("problemsYes");
+                                const problemsYes =
+                                    document.getElementById("problemsYes");
                                 if (problemsYes) {
                                     problemsYes.checked = true;
-                                    problemsYes.dispatchEvent(new Event("change"));
+                                    problemsYes.dispatchEvent(
+                                        new Event("change")
+                                    );
 
                                     // Wait for problem fields to show, then fill them
                                     setTimeout(() => {
-                                        const problemDescription = document.getElementById("problemDescription");
-                                        const technicalSolution = document.getElementById("technicalSolution");
-                                        const problemMaterials = document.getElementById("problemMaterials");
-                                        const workCompletedYes = document.getElementById("workCompletedYes");
+                                        const problemDescription =
+                                            document.getElementById(
+                                                "problemDescription"
+                                            );
+                                        const technicalSolution =
+                                            document.getElementById(
+                                                "technicalSolution"
+                                            );
+                                        const problemMaterials =
+                                            document.getElementById(
+                                                "problemMaterials"
+                                            );
+                                        const workCompletedYes =
+                                            document.getElementById(
+                                                "workCompletedYes"
+                                            );
 
                                         if (problemDescription) {
-                                            problemDescription.value = "Fisuri minore observate pe partea de est a structurii. Necesită intervenție preventivă.";
+                                            problemDescription.value =
+                                                "Fisuri minore observate pe partea de est a structurii. Necesită intervenție preventivă.";
                                         }
                                         if (technicalSolution) {
-                                            technicalSolution.value = "Aplicare material sigilant pe fisurile identificate. Monitorizare periodică pentru evitarea extinderii.";
+                                            technicalSolution.value =
+                                                "Aplicare material sigilant pe fisurile identificate. Monitorizare periodică pentru evitarea extinderii.";
                                         }
                                         if (problemMaterials) {
-                                            problemMaterials.value = "Material sigilant flexibil, pensule pentru aplicare, echipament de protecție individuală.";
+                                            problemMaterials.value =
+                                                "Material sigilant flexibil, pensule pentru aplicare, echipament de protecție individuală.";
                                         }
                                         if (workCompletedYes) {
                                             workCompletedYes.checked = true;
@@ -1637,7 +1675,9 @@ function initForm() {
                     field.classList.add(CSS_CLASSES.INVALID);
                     if (
                         feedback &&
-                        feedback.classList.contains(CSS_CLASSES.INVALID_FEEDBACK)
+                        feedback.classList.contains(
+                            CSS_CLASSES.INVALID_FEEDBACK
+                        )
                     ) {
                         showElement(feedback);
                     }
@@ -1648,7 +1688,9 @@ function initForm() {
                     field.classList.remove(CSS_CLASSES.INVALID);
                     if (
                         feedback &&
-                        feedback.classList.contains(CSS_CLASSES.INVALID_FEEDBACK)
+                        feedback.classList.contains(
+                            CSS_CLASSES.INVALID_FEEDBACK
+                        )
                     ) {
                         hideElement(feedback);
                     }
@@ -1789,9 +1831,9 @@ function initForm() {
         try {
             // Show loading state
             showLoading();
-            
+
             await submitToN8N(formData);
-            
+
             // Hide loading and show success after a brief delay
             hideLoading();
             setTimeout(() => {
@@ -2104,18 +2146,23 @@ function initForm() {
     });
 
     // --- Photo Upload Logic with Compression ---
-    
+
     // Image compression function
-    function compressImage(file, maxWidth = 1920, maxHeight = 1080, quality = 0.8) {
+    function compressImage(
+        file,
+        maxWidth = 1920,
+        maxHeight = 1080,
+        quality = 0.8
+    ) {
         return new Promise((resolve) => {
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
+            const canvas = document.createElement("canvas");
+            const ctx = canvas.getContext("2d");
             const img = new Image();
-            
+
             img.onload = () => {
                 // Calculate new dimensions
                 let { width, height } = img;
-                
+
                 if (width > height) {
                     if (width > maxWidth) {
                         height = (height * maxWidth) / width;
@@ -2127,27 +2174,31 @@ function initForm() {
                         height = maxHeight;
                     }
                 }
-                
+
                 canvas.width = width;
                 canvas.height = height;
-                
+
                 // Draw and compress
                 ctx.drawImage(img, 0, 0, width, height);
-                
-                canvas.toBlob((blob) => {
-                    // Create new file with compressed data
-                    const compressedFile = new File([blob], file.name, {
-                        type: 'image/jpeg',
-                        lastModified: Date.now()
-                    });
-                    resolve(compressedFile);
-                }, 'image/jpeg', quality);
+
+                canvas.toBlob(
+                    (blob) => {
+                        // Create new file with compressed data
+                        const compressedFile = new File([blob], file.name, {
+                            type: "image/jpeg",
+                            lastModified: Date.now(),
+                        });
+                        resolve(compressedFile);
+                    },
+                    "image/jpeg",
+                    quality
+                );
             };
-            
+
             img.src = URL.createObjectURL(file);
         });
     }
-    
+
     async function handleFiles(files) {
         // Only keep the first 20 files if more are selected
         const filesToProcess = Array.from(files).slice(0, 20);
@@ -2158,40 +2209,49 @@ function initForm() {
         }
 
         // Show compression message if files are large
-        const hasLargeFiles = filesToProcess.some(file => file.size > 2 * 1024 * 1024); // 2MB
+        const hasLargeFiles = filesToProcess.some(
+            (file) => file.size > 2 * 1024 * 1024
+        ); // 2MB
         if (hasLargeFiles) {
-            const compressionMsg = document.createElement('div');
-            compressionMsg.className = 'alert alert-info';
-            compressionMsg.innerHTML = '<small>📷 Optimizing large images...</small>';
+            const compressionMsg = document.createElement("div");
+            compressionMsg.className = "alert alert-info";
+            compressionMsg.innerHTML =
+                "<small>📷 Optimizing large images...</small>";
             photoPreview.appendChild(compressionMsg);
         }
 
         const processedFiles = [];
-        
+
         for (let i = 0; i < filesToProcess.length; i++) {
             const file = filesToProcess[i];
-            
+
             // Validate file type
-            if (!file.type.startsWith('image/')) {
+            if (!file.type.startsWith("image/")) {
                 alert(`${file.name} nu este o imagine validă.`);
                 continue;
             }
-            
+
             // Check original file size (warn if very large)
-            if (file.size > 10 * 1024 * 1024) { // 10MB
-                const proceed = confirm(`${file.name} este foarte mare (${formatFileSize(file.size)}). Dorești să continui? Imaginea va fi optimizată automat.`);
+            if (file.size > 10 * 1024 * 1024) {
+                // 10MB
+                const proceed = confirm(
+                    `${file.name} este foarte mare (${formatFileSize(
+                        file.size
+                    )}). Dorești să continui? Imaginea va fi optimizată automat.`
+                );
                 if (!proceed) continue;
             }
-            
+
             try {
                 // Compress image if it's large or not already JPEG
                 let processedFile = file;
-                if (file.size > 1024 * 1024 || !file.type.includes('jpeg')) { // 1MB threshold
+                if (file.size > 1024 * 1024 || !file.type.includes("jpeg")) {
+                    // 1MB threshold
                     processedFile = await compressImage(file);
                 }
-                
+
                 processedFiles.push(processedFile);
-                
+
                 // Create preview
                 const reader = new FileReader();
                 reader.onload = (e) => {
@@ -2218,49 +2278,62 @@ function initForm() {
 
                     const fileInfo = document.createElement("div");
                     fileInfo.className = "file-info";
-                    
+
                     // Show compression savings if file was compressed
                     if (processedFile.size < file.size) {
-                        const savings = ((file.size - processedFile.size) / file.size * 100).toFixed(1);
-                        fileInfo.innerHTML = `${file.name}<br><small>Optimizat: ${formatFileSize(processedFile.size)} (-${savings}%)</small>`;
+                        const savings = (
+                            ((file.size - processedFile.size) / file.size) *
+                            100
+                        ).toFixed(1);
+                        fileInfo.innerHTML = `${
+                            file.name
+                        }<br><small>Optimizat: ${formatFileSize(
+                            processedFile.size
+                        )} (-${savings}%)</small>`;
                     } else {
-                        fileInfo.textContent = `${file.name} (${formatFileSize(processedFile.size)})`;
+                        fileInfo.textContent = `${file.name} (${formatFileSize(
+                            processedFile.size
+                        )})`;
                     }
 
                     container.appendChild(img);
                     container.appendChild(removeBtn);
                     container.appendChild(fileInfo);
-                    
+
                     // Remove compression message if it exists
-                    const compressionMsg = photoPreview.querySelector('.alert-info');
+                    const compressionMsg =
+                        photoPreview.querySelector(".alert-info");
                     if (compressionMsg) compressionMsg.remove();
-                    
+
                     photoPreview.appendChild(container);
                 };
                 reader.readAsDataURL(processedFile);
-                
             } catch (error) {
-                console.error('Error processing image:', error);
+                console.error("Error processing image:", error);
                 alert(`Eroare la procesarea imaginii ${file.name}`);
             }
         }
-        
+
         // Update the file input with processed files
         updateFileInput(processedFiles);
     }
-    
+
     // Helper function to update file input with processed files
     function updateFileInput(files) {
         const dataTransfer = new DataTransfer();
-        files.forEach(file => dataTransfer.items.add(file));
+        files.forEach((file) => dataTransfer.items.add(file));
         photoUpload.files = dataTransfer.files;
-        
+
         // Update file count
         const fileCount = document.getElementById("file-count");
         if (fileCount) {
             const totalSize = files.reduce((sum, file) => sum + file.size, 0);
-            fileCount.innerHTML = files.length > 0 ? 
-                `${files.length} fișiere (${formatFileSize(totalSize)} total)` : '';
+            fileCount.innerHTML =
+                files.length > 0
+                    ? `${files.length} fișiere (${formatFileSize(
+                          totalSize
+                      )} total)`
+                    : "";
         }
     }
 
