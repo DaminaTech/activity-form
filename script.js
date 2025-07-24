@@ -1270,7 +1270,7 @@ function addTestDataButton() {
     const button = document.createElement("button");
     button.id = "fillTestDataBtn";
     button.type = "button";
-    button.className = "btn btn-outline-warning btn-sm ms-2";
+    button.className = "btn btn-outline-danger btn-sm ms-2";
     button.innerHTML = "🧪 Completează cu date de test";
     button.onclick = fillTestData;
 

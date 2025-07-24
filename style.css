@@ -345,34 +345,61 @@ body {
 
 /* Test Mode Styling */
 #testModeBanner {
-    border-left: 4px solid #ff9800;
-    background-color: #fff3cd;
-    border-color: #ffeeba;
-    animation: pulse 2s infinite;
+    border-left: 4px solid #dc3545;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    animation: danger-pulse 2s infinite;
 }
 
-@keyframes pulse {
+@keyframes danger-pulse {
     0%, 100% {
         opacity: 1;
+        box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
     }
     50% {
-        opacity: 0.8;
+        opacity: 0.9;
+        box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
     }
 }
 
 /* Test mode toggle styling */
 #testModeToggle:checked {
-    background-color: #ff9800;
-    border-color: #ff9800;
+    background-color: #dc3545;
+    border-color: #dc3545;
 }
 
 #testModeToggle:checked:focus {
-    box-shadow: 0 0 0 0.25rem rgba(255, 152, 0, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-/* Subtle background change in test mode - applied via JavaScript */
+/* Dangerous background change in test mode - applied via JavaScript */
 body.test-mode {
-    background-color: #fff8e1 !important;
+    background-color: #fdf2f2 !important;
+    background-image: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(220, 53, 69, 0.03) 10px,
+        rgba(220, 53, 69, 0.03) 20px
+    ) !important;
+}
+
+/* Additional danger styling for test mode */
+body.test-mode .form-container {
+    border: 2px solid #dc3545 !important;
+    box-shadow: 0 0 20px rgba(220, 53, 69, 0.2) !important;
+}
+
+body.test-mode .form-title::after {
+    content: " ⚠️ PERICOL";
+    color: #dc3545;
+    font-weight: 800;
+    animation: danger-blink 1.5s infinite;
+}
+
+@keyframes danger-blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
 }
 
 /* Floating Test Mode Button */
@@ -405,19 +432,23 @@ body.test-mode {
 }
 
 .test-mode-floating-btn.active {
-    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
-    color: #856404;
-    border: 2px solid #ffc107;
+    background: linear-gradient(135deg, #f8d7da 0%, #f1aeb5 100%);
+    color: #721c24;
+    border: 2px solid #dc3545;
     opacity: 1;
-    animation: pulse-glow 2s infinite;
+    animation: danger-glow 2s infinite;
+    font-weight: 800;
+    text-shadow: 0 0 3px rgba(220, 53, 69, 0.5);
 }
 
-@keyframes pulse-glow {
+@keyframes danger-glow {
     0%, 100% {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(255, 193, 7, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(220, 53, 69, 0.6);
+        transform: scale(1);
     }
     50% {
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), 0 0 0 8px rgba(255, 193, 7, 0.1);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2), 0 0 0 12px rgba(220, 53, 69, 0.1);
+        transform: scale(1.05);
     }
 }
 
