@@ -390,12 +390,6 @@ body.test-mode .form-container {
     box-shadow: 0 0 20px rgba(220, 53, 69, 0.2) !important;
 }
 
-body.test-mode .form-title::after {
-    content: " ⚠️ PERICOL";
-    color: #dc3545;
-    font-weight: 800;
-    animation: danger-blink 1.5s infinite;
-}
 
 @keyframes danger-blink {
     0%, 50% { opacity: 1; }
