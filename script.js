@@ -1138,7 +1138,7 @@ const data = {
 const WEBHOOKS = {
     production:
         "https://daminatech.app.n8n.cloud/webhook/aaa83a86-bf6f-4383-b686-20b7b82b381f",
-    test: "https://daminatech.app.n8n.cloud/webhook/4deec761-6c95-4c55-96bb-fc51b85cbdac", // Înlocuiește cu URL-ul webhook de test
+    test: "https://n8n.srv933813.hstgr.cloud/webhook/4deec761-6c95-4c55-96bb-fc51b85cbdac", // Înlocuiește cu URL-ul webhook de test
 };
 
 // Constants for repeated strings
