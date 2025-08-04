@@ -1134,7 +1134,7 @@ const data = {
     },
 };
 
-// Configurare n8n Webhook
+// Configurare n8n Webhook.
 const WEBHOOKS = {
     production:
         "https://n8n.srv933813.hstgr.cloud/webhook/aaa83a86-bf6f-4383-b686-20b7b82b381f",
