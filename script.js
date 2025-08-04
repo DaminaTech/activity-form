@@ -253,7 +253,9 @@ const data = {
                             name: "42 Bazin namol activ in exces (fostul BIO-P2)",
                             faza: "Faza 1",
                         },
-                        { name: "43 Statie chimicale", faza: "Faza 1" },
+                        { name: "43.1 Statie chimicale", faza: "Faza 1" },
+                        { name: "43.2 Statie chimicale", faza: "Faza 1" },
+                        { name: "43.3 Statie chimicale", faza: "Faza 1" },
                         {
                             name: "44 Statie suflante pentru aria 28",
                             faza: "Faza 1",
