@@ -2202,8 +2202,8 @@ function initForm() {
     }
 
     async function handleFiles(files) {
-        // Only keep the first 20 files if more are selected
-        const filesToProcess = Array.from(files).slice(0, 20);
+        // Only keep the first 30 files if more are selected
+        const filesToProcess = Array.from(files).slice(0, 30);
 
         // Clear existing previews if we're replacing them
         if (filesToProcess.length > 0) {
