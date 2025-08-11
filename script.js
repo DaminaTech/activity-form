@@ -7,6 +7,7 @@ const data = {
                 glina: {
                     name: "Glina",
                     buildings: [
+                        { name: "00 - gard perimetral vest", faza: "Faza 1" },
                         { name: "00 - cladire chimizare", faza: "Faza 1" },
                         { name: "00 - platforma chimizare", faza: "Faza 1" },
                         { name: "00 - organizare noua Damina", faza: "Faza 1" },
